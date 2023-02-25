@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Data Structure and Algorithms
+title:  Data Structure and Algorithms 1
 date:   2023-02-27 00:00:00
-description: Lecture Blogs
-tags: Data Structure
+description: 
+tags: Lecture Notes
 categories: sample-posts
 ---

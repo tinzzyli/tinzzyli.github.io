@@ -15,7 +15,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: Adversarial Robustness; FATE in AI; Reinforcement Learning
 lang: en, zh, de
-icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: 🦜  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://tinzzyli.github.io
 baseurl: 
@@ -124,7 +124,7 @@ pagination:
   enabled: true
 
 related_blog_posts:
-  enabled: true
+  enabled: false
   max_related: 5
 
 # Giscus comments (RECOMMENDED)
@@ -293,7 +293,7 @@ more_authors_animation_delay: 10  # more authors are revealed on click using ani
 
 # These are the defaults
 external_links:
-  enabled: false
+  enabled: true
   rel: external nofollow noopener
   target: _blank
   exclude:

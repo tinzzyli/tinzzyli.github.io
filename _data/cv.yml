@@ -2,18 +2,18 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Tingxi Li
     - name: Date of Birth
-      value: 14th March 1879
+      value: Dec. 2000
     - name: Languages
-      value: English, German
+      value: English, German, Mandarin, Cantonese
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Bachelor of Science
+      institution: Dalian University of Technology
+      year: 2019 - 2024
       description:
         - Description 1.
         - Description 2.
@@ -21,12 +21,7 @@
           contents:
             - Sub-description 1.
             - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+
 
 - title: Experience
   type: time_table

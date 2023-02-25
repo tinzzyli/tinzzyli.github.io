@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Data Structure Lecture 1
+title:  a post with formatting and links
 date:   2023-02-27 12:00:00
 description: Data Structure and Algorithms 
 tags: Lecture Notes

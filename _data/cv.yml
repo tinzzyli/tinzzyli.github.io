@@ -40,8 +40,7 @@
       institution: TenClass Inc., Shenzhen, China
       year: 2022
       description:
-        - Responsible for building a virtual host for TikTok live streaming mostly based on an open resource project
-wav2lip.
+        - Responsible for building a virtual host for TikTok live streaming mostly based on an open resource project wav2lip.
         - Made modifications to the model and fine-tune it on a private dataset.
 
     - title: Research Assistant
@@ -49,13 +48,10 @@ wav2lip.
       year: 2021
       description: 
         - An analysis of popular financial fraud detection algorithms and put forward suggestions for improvement.
-        - Comparison of unsupervised outlier scores computed at different levels of granularity is performed and tested on a credit card fraud detection dataset. Use deep learning models such as STAN, DAE, and CNN. It is found that the current financial fraud detection models are dependent on the dataset, have high computational expenses, and are usually overfitted. The solution can be to improve the diversity of datasets and reduce the time and memory costs.
+        - Comparison of unsupervised outlier scores computed at different levels of granularity is performed and tested on a credit card fraud detection dataset.
         - The research result is published as Deep Learning Techniques for Financial Fraud Detection.
         
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
+
 
 
 - title: Open Source Projects

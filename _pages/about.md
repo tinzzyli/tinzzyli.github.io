@@ -5,7 +5,7 @@ permalink: /
 subtitle: 亭熹 李 (pronounced as tinzzy li for non-native mandarin speakers)
 profile:
   align: right
-  image: avatar.png
+  image: profile_pic.JPG
   image_circular: true # crops the image to make it circular
   address: >
     <p>tinzzy.li [at] gmail.com</p>

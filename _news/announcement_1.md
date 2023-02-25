@@ -1,7 +1,6 @@
 ---
 layout: post
-date: 2022-12-3 02:00:00-0800
+date: 2016-01-15 07:59:00-0400
 inline: true
 ---
-
-Joining IRV Lab at UTD as research assistant, advised by Prof. Yang and Prof. Xiang.
+Joining IRVL at UTD as a research assistant. I am fortunate to be advised by Prof. Yand and Prof. Xiang! :sparkles: :smile:

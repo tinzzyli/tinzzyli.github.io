@@ -2,13 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. 亭熹 李(pronounce as tinzzy li for non-native mandarin speakers)
+subtitle: <a href='#'>Affiliations</a>. 亭熹 李 (pronounced as tinzzy li for non-native mandarin speakers)
 profile:
   align: right
-  image: avatar.jpg
+  image: tinzzyli.github.io/assets/img/avatar.png?size=100
   image_circular: false # crops the image to make it circular
   address: >
-    <p>tinzzy.li [u-know-what] gmail.com</p>
+    <p>tinzzy.li [at] gmail.com</p>
     
 
 news: true  # includes a list of news items
@@ -18,3 +18,4 @@ social: true  # includes social icons at the bottom of the page
 
 Hi! I am a junior student at [Dalian University of Technology](https://en.dlut.edu.cn/), also a research assistant at [UTD](https://www.utdallas.edu/), I am very fortunate to be advised by [Prof. Yang](http://youngwei.com/) and [Prof. Xiang](https://yuxng.github.io/).
 
+My primary research interest lies in adversarial machine learning, FATE in AI and HCI aided chemistry.

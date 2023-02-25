@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2022-12-3 02:00:00-0800
 inline: true
 ---
 
-A simple inline announcement.
+Joining <a href="https://labs.utdallas.edu/irvl/">IRV Lab</a> at UTD as research assistant, advised by <a href="http://youngwei.com/">Prof. Yang</a> and <a href="https://yuxng.github.io/">Prof. Xiang</a>.

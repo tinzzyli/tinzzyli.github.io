@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A breif research statement
-date: 2015-11-07 16:11:00-0400
+date: 2023-1-23 17:05:00-0800
 inline: false
 ---
 

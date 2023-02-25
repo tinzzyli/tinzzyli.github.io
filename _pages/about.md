@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. 亭熹 李 (pronounced as tinzzy li for non-native mandarin speakers)
+subtitle: 亭熹 李 (pronounced as tinzzy li for non-native mandarin speakers)
 profile:
   align: right
-  image: tinzzyli.github.io/assets/img/avatar.png?size=100
-  image_circular: false # crops the image to make it circular
+  image: avatar.png
+  image_circular: true # crops the image to make it circular
   address: >
     <p>tinzzy.li [at] gmail.com</p>
     

@@ -33,8 +33,8 @@
       institution: University of Texas at Dallas
       year: 2022 - now
       description:
-        - Design two adversarial attack approaches for an object grasping benchmark, respectively adding an opponent agent and feeding an attacked image as input.
-        - Implement a differentiable rendering method to replace the original renderer of BulletArm. Use the gradient from the differentiable renderer to produce adversarial inputs.
+        - Design adversarial attack approaches for an object grasping benchmark.
+        - Use gradient information from a differentiable renderer to produce adversarial examples.
         
     - title: Research Intern
       institution: TenClass Inc., Shenzhen, China
@@ -47,8 +47,8 @@
       institution: Carnegie Mellon University
       year: 2021
       description: 
-        - An analysis of popular financial fraud detection algorithms and put forward suggestions for improvement.
-        - Comparison of unsupervised outlier scores computed at different levels of granularity is performed and tested on a credit card fraud detection dataset.
+        - A survey of popular financial fraud detection algorithms and put forward suggestions for improvement.
+        - Comparison of unsupervised outlier scores computed at different levels of granularity.
         - The research result is published as Deep Learning Techniques for Financial Fraud Detection.
         
 

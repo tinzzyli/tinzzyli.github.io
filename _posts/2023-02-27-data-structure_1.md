@@ -24,11 +24,11 @@ categories: Lecture-Notes
 
 |Name|Time-Complexity|Best Case|Worst Case|Space-Complexity|Stability|Type|Note|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
-|Bubble Sort|$O(n^2)$|$O(n)$|$O(n^2)$|$O(1)$|yes|In-place|---|
-|Selection Sort|$O(n^2)$|$O(n^2)$|$O(n^2)$|$O(1)$|no|In-place|invariant complexity|
-|Insertion Sort|$O(n^2)$|$O(n)$|$O(n^2)$|$O(1)$|yes|In-place|
+|Bubble Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
+|Selection Sort|$$O(n^2)$$|$$O(n^2)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|invariant complexity|
+|Insertion Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|
 |Shell Sort|
-|Merge Sort|$O(nlog_2n)$|$O(nlog_2n)$|$O(nlog_2n)$|$O(n)$|yes|Out-place|recursive, quick|
+|Merge Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n)$$|yes|Out-place|recursive, quick|
 |Quick Sort|
 
 # Sorting Algorithms and Java Implementation
@@ -113,7 +113,7 @@ public class SortingAlgorithms {
                 a[min] = temp
             }
         }//i loop
-    }
+    }//selection loop
 }
 ```
 
@@ -151,7 +151,7 @@ public class SortingAlgorithms {
             }//while loop
             a[position] = value;
         }//i loop
-    }
+    }//insertion loop
 }
 ```
 
@@ -182,9 +182,10 @@ public class SortingAlgorithms {
     public static void main(String[] args) {
         MergeSort();
     }
+    
     public void MergeSort(double[] a){
         double temp = new double[a];
-        Divide(a, temp, 0, a.length-1);
+        Sort(a, temp, 0, a.length-1);
     }
 
     private void Sort(double[] a, double[] temp, int left, int right){
@@ -194,7 +195,7 @@ public class SortingAlgorithms {
             Sort(a, temp, left, middle);
             Sort(a, temp, middle+1, right);
             Merge(a, temp, left, middle, right);
-        }
+        }//sort
     }
 
     private void Merge(double[] a, double[] temp, int left, int middle, int right){
@@ -217,7 +218,7 @@ public class SortingAlgorithms {
         for(i = 0; i < k; i++){
             a[left+i] = temp[i];
         }
-    }
+    }//merge
 }
 ```
 ### Quick Sort

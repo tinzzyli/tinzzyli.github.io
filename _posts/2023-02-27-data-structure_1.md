@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Data Structure Lecture 1
-date:   2023-02-28 12:00:00
+date:   2023-02-27 08:00:00
 description: 
 tags: DataStructure 
 categories: Lecture-Notes

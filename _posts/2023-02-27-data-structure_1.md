@@ -26,7 +26,7 @@ categories: Lecture-Notes
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
 |Bubble Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
 |Selection Sort|$$O(n^2)$$|$$O(n^2)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|invariant complexity|
-|Insertion Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|
+|Insertion Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
 |Shell Sort|
 |Merge Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n)$$|yes|Out-place|recursive, quick|
 |Quick Sort|
@@ -42,7 +42,7 @@ for i = length(a) to 1 do
     for j = 1 to i do
         //sort element from small to big
         if a[i] > a[i+1]
-            switch position
+            swap position
 ```
 
 ```java
@@ -87,7 +87,7 @@ for i = 1 to length(a) do
             min = j+1
     //min is index of the smallest unsorted element
     if min != i
-        switch position of a[i] and a[min]
+        swap position of a[i] and a[min]
 ```
 
 ```java
@@ -107,19 +107,20 @@ public class SortingAlgorithms {
                 }
             }//j loop
             if(min != i){
-                //find the smallest unsorted element then switch pos with the first unsorted element
+                //find the smallest unsorted element then swap pos with the first unsorted element
                 temp = a[i]
                 a[i] = a[min]
                 a[min] = temp
             }
         }//i loop
-    }//selection loop
+    }//selection sort
 }
 ```
 
 ### Insertion Sort and Shell Sort
 
 ##### Insertion Sort
+
 ```markdown
 # Pseudo Code
 init value, position = null
@@ -151,11 +152,68 @@ public class SortingAlgorithms {
             }//while loop
             a[position] = value;
         }//i loop
-    }//insertion loop
+    }//insertion sort
 }
 ```
 
 ##### Shell Sort
+
+```markdown
+# Pseudo Code
+init gap
+init temp
+//gap value is arbitrary
+for gap = a.length and gap >= 1 do
+    gap = gap/2
+    for i = gap to a.length do
+        i++
+        //if right < left, swap
+        for j = i and j > gap and a[j] < a[j-gap]
+            swap position of a[j] and a[j-gap]
+            //iterate f
+            j-=gap
+```
+
+```java
+public class SortingAlgorithms {
+    public static void main(String[] args) {
+        ShellSort();
+    }
+
+    // Vanilla Shell Sort by Donald Shell
+    public void ShellSort(double[] a){
+        int temp;
+        for(int gap = a.length; gap >= 1; gap /= 2){
+            for(int i = gap; i < a.length; i++){
+                for(int j = i; j >= gap && a[j] < a[j-gap]; j-=gap){
+                    temp = a[j];
+                    a[j] = a[j-gap];
+                    a[j-gap] = temp;
+                }//j loop
+            }//i loop
+        }//gap loop
+    }//shell sort
+
+    //O(1.5n) shell sort by Knuth
+    public void KnuthShellSort(double[] a){
+        int gap = 1;
+        while(gap , a.length/3){
+            gap = gap*3 + 1;
+        }
+
+        int temp;
+        for(; gap >= 1; gap /= 3){
+            for(int i = gap; i < a.length; i++){
+                for(int j = i; j >= gap && a[j] < a[j-gap]; j-=gap){
+                    temp = a[j];
+                    a[j] = a[j-gap];
+                    a[j-gap] = temp;
+                }//j loop
+            }//i loop
+        }//gap loop
+    }
+}
+```
 
 ### Merge Sort
 
@@ -221,7 +279,50 @@ public class SortingAlgorithms {
     }//merge
 }
 ```
+
 ### Quick Sort
+
+```markdown
+# Pseudo Code
+for i = 1 to a.length do
+    pivot = a[i]
+```
+
+```java
+public class SortingAlgorithms {
+    public static void main(String[] args) {
+        QuickSort();
+    }
+
+    public void QuickSort(double[] a, left, right){
+        if(left < right){
+            int index = Partition(a, left, right);
+            QuickSort(a, left, index-1);
+            QuickSort(a, index+1, right);
+        }
+    }//quick sort
+
+    public int Partition(double[] a, left, right){
+        int pivot = left;
+        int index = pivot + 1;
+        for(int i = index; i <= right; i++){
+            //ascending
+            if(a[i] < a[pivot]){
+                Swap(a, i, index);
+                index++;
+            }
+        }
+        Swap(a, pivot, index-1);
+        return index-1;
+    }// partition
+
+    public void Swap(double[] a, int idx1, int idx2){
+        int temp = a[idx1];
+        a[idx1] = a[idx2];
+        a[idx2] = temp;
+    }// swap
+}
+```
 
 ### Radix Sort and Count Sort
 

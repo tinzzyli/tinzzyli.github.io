@@ -278,7 +278,20 @@ public class SortingAlgorithms {
 
 ```markdown
 # Pseudo Code
+init left, right = 1, a.length
+def quick_sort
+    if  left < right
+        pivot_index = partition(a, left, right)
+        quick_sort(a, left, pivot_index - 1)
+        quick_sort(a, pivot_index + 1, right)
 
+def partition
+    init pivot = left
+    init index = pivot
+    for i = index to right
+        if(a[i] < a[pivot])
+            swap(a[i], a[index])
+            i++
 ```
 
 ```java

@@ -114,7 +114,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Jade’s Talk # blog_name will be displayed in your blog page
+blog_name: New York - Berlin # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
 blog_description: A collection of my random thoughts, tech blogs and lecture notes.
 permalink: /blog/:year/:title/

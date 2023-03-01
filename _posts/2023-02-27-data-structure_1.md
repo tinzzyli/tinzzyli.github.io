@@ -11,14 +11,10 @@ categories: Lecture-Notes
 - [Sorting Algorithms and Java Implementation](#sorting-algorithms-and-java-implementation)
     - [Bubble Sort](#bubble-sort)
     - [Selection Sort](#selection-sort)
-    - [Insertion Sort and Shell Sort](#insertion-sort-and-shell-sort)
-        - [Insertion Sort](#insertion-sort)
-        - [Shell Sort](#shell-sort)
+    - [Insertion Sort](#insertion-sort)
+    - [Shell Sort](#shell-sort)
     - [Merge Sort](#merge-sort)
     - [Quick Sort](#quick-sort)
-    - [Radix Sort and Count Sort](#radix-sort-and-count-sort)
-        - [Radix Sort](#radix-sort)
-        - [Count Sort](#count-sort)
 
 # Introduction
 
@@ -27,9 +23,9 @@ categories: Lecture-Notes
 |Bubble Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
 |Selection Sort|$$O(n^2)$$|$$O(n^2)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|invariant complexity|
 |Insertion Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
-|Shell Sort|
-|Merge Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n)$$|yes|Out-place|recursive, quick|
-|Quick Sort|
+|Shell Sort|$$O(nlog_2n)$$|$$O(nlog_2^2n)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|a quicker insertion sort
+|Merge Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n)$$|yes|Out-place|recursive|
+|Quick Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n^2)$$|$$O(log_2n)$$|no|In-place|recursive|
 
 # Sorting Algorithms and Java Implementation
 
@@ -117,9 +113,7 @@ public class SortingAlgorithms {
 }
 ```
 
-### Insertion Sort and Shell Sort
-
-##### Insertion Sort
+### Insertion Sort
 
 ```markdown
 # Pseudo Code
@@ -156,7 +150,7 @@ public class SortingAlgorithms {
 }
 ```
 
-##### Shell Sort
+### Shell Sort
 
 ```markdown
 # Pseudo Code
@@ -284,8 +278,7 @@ public class SortingAlgorithms {
 
 ```markdown
 # Pseudo Code
-for i = 1 to a.length do
-    pivot = a[i]
+
 ```
 
 ```java
@@ -309,9 +302,11 @@ public class SortingAlgorithms {
             //ascending
             if(a[i] < a[pivot]){
                 Swap(a, i, index);
+                //the final position pivot should be
                 index++;
             }
         }
+        //update the desired position of pivot in the last step
         Swap(a, pivot, index-1);
         return index-1;
     }// partition
@@ -323,9 +318,3 @@ public class SortingAlgorithms {
     }// swap
 }
 ```
-
-### Radix Sort and Count Sort
-
-##### Radix Sort
-
-##### Count Sort

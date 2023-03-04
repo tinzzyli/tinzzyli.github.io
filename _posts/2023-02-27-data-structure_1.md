@@ -234,43 +234,38 @@ public class SortingAlgorithms {
     public static void main(String[] args) {
         MergeSort();
     }
-    
-    public void MergeSort(double[] a){
-        double temp = new double[a];
-        Sort(a, temp, 0, a.length-1);
+    public static void MergeSort(double[] a){
+        double[] temp = new double[a.length];
+        Split(a, temp, 0, a.length-1);
+        System.out.println(Arrays.toString(a));
     }
 
-    private void Sort(double[] a, double[] temp, int left, int right){
-        //when left == right, there is one element in each sub-array, sorted
-        if(left < right){
-            int middle = (left + right)/2;
-            Sort(a, temp, left, middle);
-            Sort(a, temp, middle+1, right);
-            Merge(a, temp, left, middle, right);
-        }//sort
-    }
-
-    private void Merge(double[] a, double[] temp, int left, int middle, int right){
-        int i = 0;
-        int j = left;
-        int k = middle+1;
-        //Recursion is executed from bottom to top!!
-        //exit while loop when either the left half or the right half is empty
-        while(j<=middle && k<=right+1){
-            temp[i++] = a[j] < a[k] ? a[j++] : a[k++];
+    public static void Split(double[] a, double[] temp, int left, int right){
+        if(left<right){
+            int mid = (left + right)/2;
+            Split(a, temp, left, mid);
+            Split(a, temp, mid+1, right);
+            Merge(a, temp, left, mid, right);
         }
-        //only one of the following while loop will be executed
-        while(j<=middle){
+    }
+
+    public static void Merge(double[] a, double[] temp, int left, int mid, int right){
+        int i = 0;
+        int j = left;//left pointer
+        int k = mid+1;//right pointer
+        while (j <= mid && k <= right){
+            temp[i++] = a[j] <= a[k] ? a[j++] : a[k++];
+        }
+        while(j<=mid){
             temp[i++] = a[j++];
         }
-        while(k<=right+1){
+        while(k<=right){
             temp[i++] = a[k++];
         }
-        //put back to a
-        for(i = 0; i < k; i++){
-            a[left+i] = temp[i];
+        for(int n=0; n<i; ++n){
+            a[left+n] = temp[n];
         }
-    }//merge
+    }
 }
 ```
 

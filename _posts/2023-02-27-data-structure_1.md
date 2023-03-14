@@ -23,9 +23,9 @@ categories: Lecture-Notes
 |Bubble Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
 |Selection Sort|$$O(n^2)$$|$$O(n^2)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|invariant complexity|
 |Insertion Sort|$$O(n^2)$$|$$O(n)$$|$$O(n^2)$$|$$O(1)$$|yes|In-place|---|
-|Shell Sort|$$O(nlog_2n)$$|$$O(nlog_2^2n)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|a quicker insertion sort
-|Merge Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n)$$|yes|Out-place|recursive|
-|Quick Sort|$$O(nlog_2n)$$|$$O(nlog_2n)$$|$$O(n^2)$$|$$O(log_2n)$$|no|In-place|recursive|
+|Shell Sort|$$O(nlog\ n)$$|$$O(nlog^2n)$$|$$O(n^2)$$|$$O(1)$$|no|In-place|a quicker insertion sort
+|Merge Sort|$$O(nlog\ n)$$|$$O(nlog\ n)$$|$$O(nlog\ n)$$|$$O(n)$$|yes|Out-place|recursive|
+|Quick Sort|$$O(nlog\ n)$$|$$O(nlog\ n)$$|$$O(n^2)$$|$$O(log\ n)$$|no|In-place|recursive|
 
 # Sorting Algorithms and Java Implementation
 

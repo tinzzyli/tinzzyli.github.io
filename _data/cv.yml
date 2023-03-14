@@ -15,8 +15,8 @@
       institution: Dalian University of Technology
       year: 2019 - 2024
       description:
-        - B.S. - Applied Chemistry
         - B.S. - Computer Science
+        - B.S. - Applied Chemistry
         - title: Core Courses
           contents:
             - C programming; Data Structure and Algorithms; Database; Computer Architecture; Computer Networks
@@ -93,4 +93,4 @@
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Road Trip, Hiking, Meditation, etc.
+    - <u>Hobbies:</u> Road Trip, Coding, Hiking, Meditation, etc.

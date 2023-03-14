@@ -16,9 +16,10 @@
       year: 2019 - 2024
       description:
         - Major - Applied Chemistry
+        - Minor - Computer Science
         - title: Core Courses
           contents:
-            - C programming; Data Structure and Algorithms; Database
+            - C programming; Data Structure and Algorithms; Database; Computer Architecture; Computer Networks
             - Computational Chemistry; Physical Chemistry
      
     - title: Visiting Student
@@ -30,11 +31,19 @@
   type: time_table
   contents:
     - title: Research Assistant
-      institution: University of Texas at Dallas
+      institution: University of Texas, Dallas
       year: 2022 - now
       description:
         - Design adversarial attack approaches for an object grasping benchmark.
         - Use gradient information from a differentiable renderer to produce adversarial examples.
+
+    - title: Research Assistant
+      institution: University of California, Santa Barbara
+      year: 2022
+      description:
+        - Investigate the robustness of Vision Transformers (ViT), proved ViT to be more vulnerable than CNN under adversarial attacks.
+        - By applying a negative data augmentation and modifying the loss function, lowered the fooling rate.
+        
         
     - title: Research Intern
       institution: TenClass Inc., Shenzhen, China
@@ -66,7 +75,7 @@
   contents:
     - year: 2023
       items: 
-        - Dalian University of Technology Research Scholarship
+        - Dalian University of Technology Student Scholarship
 
 
 - title: Academic Interests
@@ -77,11 +86,10 @@
         - Build image models that robust against malicious attacks and ditribution shift
         - Build interpretable neural networks
         - Ethics in AI
-    - title: HCI-aided Chemistry
+    - title: Robotics
       items:
-        - Chemical education, virtual laboratories and simulated chemical reactions
-        - Collabrative tools and laboratory information management systems for chemistry research purpose
-
+        - Development of autonomous robots for industrial and service applications
+        - Exploring the use of machine learning and computer vision techniques to enhance the perception and decision-making abilities of robots in complex and dynamic environments
 - title: Other Interests
   type: list
   contents:

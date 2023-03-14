@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A breif research statement
+title: A breif research statement(a little of out dated)
 date: 2023-1-23 17:05:00-0800
 inline: false
 ---

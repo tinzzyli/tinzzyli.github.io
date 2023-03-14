@@ -1,4 +1,4 @@
-### welcome to tingxi's homepage
+# Welcome to tingxi's homepage
 
 Click [here](https://tinzzyli.github.io/) to go to my homepage
 

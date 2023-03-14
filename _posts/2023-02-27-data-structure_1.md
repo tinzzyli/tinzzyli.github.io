@@ -281,12 +281,14 @@ def quick_sort
         quick_sort(a, pivot_index + 1, right)
 
 def partition
-    init pivot = left
-    init index = pivot
-    for i = index to right
-        if(a[i] < a[pivot])
-            swap(a[i], a[index])
-            i++
+    init p = left-1 
+    for i = left to right-1
+        if(a[i] < a[right])
+            p++
+            swap(i, p)
+    p++
+    swap(right, p)
+            
 ```
 
 ```java
@@ -295,34 +297,36 @@ public class SortingAlgorithms {
         QuickSort();
     }
 
-    public void QuickSort(double[] a, left, right){
+    public static void QuickSort(double[] a, int left, int right){
         if(left < right){
-            int index = Partition(a, left, right);
-            QuickSort(a, left, index-1);
-            QuickSort(a, index+1, right);
+            int Partition_index = Partition(a, left, right);
+            QuickSort(a, left, Partition_index-1);
+            QuickSort(a, Partition_index+1, right);
         }
+
     }//quick sort
 
-    public int Partition(double[] a, left, right){
-        int pivot = left;
-        int index = pivot + 1;
-        for(int i = index; i <= right; i++){
-            //ascending
-            if(a[i] < a[pivot]){
-                Swap(a, i, index);
-                //the final position pivot should be
-                index++;
+    public static int Partition(double[] a, int left, int right){
+        int p = left-1;
+        for (int i = left; i < right; i++){
+            //the interval [p+1, i] is where the smaller numbers in
+            if (a[right] > a[i]){
+                //we assume pivot is the smallest element in a sub-array
+                p++;
+                Swap(a, i, p);
+                //move smaller elements to left side
+
             }
         }
-        //update the desired position of pivot in the last step
-        Swap(a, pivot, index-1);
-        return index-1;
-    }// partition
+        p++;
+        Swap(a, right, p);
+        return p;
+    }//partition
 
-    public void Swap(double[] a, int idx1, int idx2){
-        int temp = a[idx1];
+    public static void Swap(double[] a, int idx1, int idx2){
+        double temp = a[idx1];
         a[idx1] = a[idx2];
         a[idx2] = temp;
-    }// swap
+    }//swap
 }
 ```

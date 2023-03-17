@@ -53,15 +53,19 @@ public static int Fib(int n){
     return Fib(n-1) + Fib(n-2);
 }
 
-public static int Fib_iter(int n){
-    if (n < 3){return 1;}
-    int fib0, fib1, fib2;
-    
-    for (int i=2; i<=n; i++) {
-        
-        
+public static int iterFib(int n){
+    if (n < 2){
+        return 1;
     }
-    return fib2;
+    int fib1 = 1;
+    int fib2 = 1;
+    int ret = 0;
+    for(i=2; i<=n; i++){
+        ret = fib1 + fib2;
+        fib2 = ret;
+        fib1 = fib2;
+    }
+    return ret;
 }
 ```
 
@@ -70,6 +74,15 @@ public static int Fib_iter(int n){
 public static int Fac(int n){
     if (n == 1){return 1;}
     return n*Fac(n-1);
+}
+
+public static int iterFac(int n){
+    int ret=0;
+    if (n <= 1){return 1;}
+    for (int i=2; i<=n; i++){
+        ret = ret*i;
+    }
+    return ret;
 }
 ```
 

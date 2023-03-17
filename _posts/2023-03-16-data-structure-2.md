@@ -12,6 +12,7 @@ categories: Data_Structure
 #### A function calls itself is recursion.
 
 - direct recursion
+  
 ```java
 public static int fac(int n){
     if(n == 1){return 1;}
@@ -20,6 +21,7 @@ public static int fac(int n){
 ```
 
 - indirect recursion
+  
 ```java
 public static void func1(){
     func2();
@@ -29,6 +31,7 @@ public static void func2(){
     func1();
 }
 ```
+
 
 # When to use Recursion?
 

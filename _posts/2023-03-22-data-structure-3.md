@@ -7,6 +7,17 @@ tags: Lecture_Notes
 categories: Data_Structure Heap
 ---
 
+
+- [Heap Algorithms](#heap-algorithms)
+  - [Max Heapify](#max-heapify)
+  - [Build Max Heap](#build-max-heap)
+  - [Heap Sort](#heap-sort)
+  - [Heap Extract Max](#heap-extract-max)
+  - [Max Heap Increase Key](#max-heap-increase-key)
+  - [Max Heap Insert](#max-heap-insert)
+  - [Time Complexity Analysis](#time-complexity-analysis)
+
+
 # Heap Algorithms
 Heap is a binary-tree-like data structure. As indexed from **0** to **arr.length-1**, the relationship between parent node and children nodes can be demostrated as:
 
@@ -28,6 +39,7 @@ To better understand heap, we do 6 steps from easy to hard:
 - Heap-Extract-Max
 - Max-Heap-Increase-Key
 - Max-Heap-Insert
+
 
 ## Max Heapify
 
@@ -59,6 +71,7 @@ public static void MaxHeapify(double[] a, int parent_idx, int heapSize){
 }
 ```
 
+
 ## Build Max Heap
 When iteratively called MaxHeapify on each node from **arr.length/2** to **0**, the array is now a max heap.
 
@@ -74,6 +87,7 @@ public static void BuildMaxHeap(double[] a){
     }//end for loop
 }
 ```
+
 
 ## Heap Sort
 By re-use the codes above, we can swap the **0th** element and the **arr.length-1** element, detached the last element, then do Build Max Heap at **0th** node.
@@ -114,6 +128,8 @@ public static void HeapExtractMax(double[] a) {
     MaxHeapify(a, 0, a.length-2);
 }//extract max element
 ```
+
+
 ## Max Heap Increase Key
 Increasing the value of a node **will ONLY** affect its parent node and its parent's parent...
 
@@ -137,6 +153,7 @@ public static void MaxHeapIncreaseKey(double[] a, int i, double value){
 }
 ```
 
+
 ## Max Heap Insert
 Tricky: re-use code MaxHeapIncreaseKey
 
@@ -151,18 +168,13 @@ public static void MaxHeapInsert(double[] a, double value){
 }
 ```
 
-## TimeComplexity Analysis
+
+## Time Complexity Analysis
 |Max Heapify|Build Max Heap|Increase Key|Heap Sort|Extract Max|Heap Insert|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|$O(log\ n)$|$O(n)$|$O(log\ n)$|$O(nlog\ n)$|$O(log\ n)$|$O(log\ n)$|
+|$$O(log\ n)$$|$$O(n)$$|$$O(log\ n)$$|$$O(nlog\ n)$$|$$O(log\ n)$$|$$O(log\ n)$$|
 
 Homework: Prove the tighter bound of the time complexity of Build Max Heap.
 
 
-<div id="refer-anchor-1"></div>
-
-[1] picture sourced from [OpenDSA](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_images/BinArray.png).
-
-<div id="refer-anchor-1"></div>
-
-[2] When I wrote this post, I found this [handout](https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf) from CSAIL really helpful.
+[1] When I wrote this post, I found this [handout](https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf) from CSAIL really helpful.

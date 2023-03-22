@@ -8,25 +8,30 @@ categories: Data_Structure Heap
 ---
 
 # Heap Algorithms
-Heap is a binary-tree-like data structure. As indexed from $0$ to $arr.length-1$, the relationship between parent node and children nodes can be demostrated as:
-$$ $$
+Heap is a binary-tree-like data structure. As indexed from **0** to **arr.length-1**, the relationship between parent node and children nodes can be demostrated as:
+
+
 $$ left\_child = parent * 2 + 1 $$
+
+
 $$ right\_child = parent * 2 + 2 $$
+
+
 $$ parent = \lfloor(child-1)/2\rfloor$$
 
-To better understand Heap, we do 7 steps from easy to hard:
+
+To better understand heap, we do 6 steps from easy to hard:
 
 - Max-Heapify
 - Build-Max-Heap
 - HeapSort
 - Heap-Extract-Max
-- Heap-Maximum
 - Max-Heap-Increase-Key
 - Max-Heap-Insert
 
 ## Max Heapify
 
-MaxHeapify is a recursion process. **Assumed that the left branch and right branch of node $i$ are max heaps**, calling MaxHeapify at $i$ would move $i$ from top to a proper position recursively. Please pay attention to the terminal state of the recursion.
+MaxHeapify is a recursion process. **Assumed that the left branch and right branch of node i are max heaps**, calling MaxHeapify at **i** would move **i** from top to a proper position recursively. Please pay attention to the terminal state of the recursion.
 
 Note that:
 Index out of range check should go first
@@ -55,11 +60,11 @@ public static void MaxHeapify(double[] a, int parent_idx, int heapSize){
 ```
 
 ## Build Max Heap
-When iteratively called MaxHeapify on each node from $\lfloor arr.length/2\rfloor$ to $0$, the array is now a max heap.
+When iteratively called MaxHeapify on each node from **arr.length/2** to **0**, the array is now a max heap.
 
 Note that:
-**Iteration starts from $\lfloor arr.length/2\rfloor$ to $0$.**
-$i$ value decreases in the iteration.
+**Iteration starts from arr.length/2 to 0.**
+**i** value decreases in the iteration.
 ```java
 public static void BuildMaxHeap(double[] a){
     int heapSize = a.length;
@@ -71,7 +76,7 @@ public static void BuildMaxHeap(double[] a){
 ```
 
 ## Heap Sort
-By re-use the codes above, we can swap the $0^{th}$ element and the $arr.length-1^{th}$ element, detached the last element, then do Build Max Heap at $0^{th}$ node.
+By re-use the codes above, we can swap the **0th** element and the **arr.length-1** element, detached the last element, then do Build Max Heap at **0th** node.
 
 This can work because the character of Max Heap: the first element is the biggest. We use a for loop to iteratively detach the biggest element in the array, a ascending sorted array can be formed.
 

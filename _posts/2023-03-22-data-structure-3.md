@@ -1,23 +1,14 @@
 ---
 layout: post
 title:  Data Structure Lecture 3
-date:   2023-02-27 08:00:00
+date:   2023-03-27 08:00:00
 description: 
 tags: Lecture_Notes 
 categories: Data_Structure Heap
 ---
 
 # Heap Algorithms
-
-Heap is in fact an array, it has a structure as below:
-
-|index|0|1|2|3|4|5|6|7|8|9|
-|---|---|---|---|---|---|---|---|---|---|---|
-|value|31|14|15|19|26|53|58|97|93|23|
-
-![pic1](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_images/BinArray.png)
-
-Heap is a binary-tree-like data structure as it it shown in the picture above [<sup>1</sup>](#refer-anchor-1). As indexed from $0$ to $arr.length-1$, the relationship between parent node and children nodes can be demostrated as:
+Heap is a binary-tree-like data structure. As indexed from $0$ to $arr.length-1$, the relationship between parent node and children nodes can be demostrated as:
 $$ $$
 $$ left\_child = parent * 2 + 1 $$
 $$ right\_child = parent * 2 + 2 $$
@@ -38,8 +29,7 @@ To better understand Heap, we do 7 steps from easy to hard:
 MaxHeapify is a recursion process. **Assumed that the left branch and right branch of node $i$ are max heaps**, calling MaxHeapify at $i$ would move $i$ from top to a proper position recursively. Please pay attention to the terminal state of the recursion.
 
 Note that:
-
-- Index out of range check should go first
+Index out of range check should go first
 
 ```java
 public static void MaxHeapify(double[] a, int parent_idx, int heapSize){
@@ -68,8 +58,8 @@ public static void MaxHeapify(double[] a, int parent_idx, int heapSize){
 When iteratively called MaxHeapify on each node from $\lfloor arr.length/2\rfloor$ to $0$, the array is now a max heap.
 
 Note that:
-1. **Iteration starts from $\lfloor arr.length/2\rfloor$ to $0$.**
-2. $i$ value decreases in the iteration.
+**Iteration starts from $\lfloor arr.length/2\rfloor$ to $0$.**
+$i$ value decreases in the iteration.
 ```java
 public static void BuildMaxHeap(double[] a){
     int heapSize = a.length;
@@ -86,8 +76,7 @@ By re-use the codes above, we can swap the $0^{th}$ element and the $arr.length-
 This can work because the character of Max Heap: the first element is the biggest. We use a for loop to iteratively detach the biggest element in the array, a ascending sorted array can be formed.
 
 Note that:
-
-- the array **MUST** be a Max Heap before swap, and this rule works for **every** function mentioned below.
+The array **MUST** be a Max Heap before swap, and this rule works for **every** function mentioned below.
 
 ```java
 public static void HeapSort(double[] a){
@@ -109,10 +98,10 @@ To remove the biggest element(of course you can also return it), we simply do:
 ```java
 a[0] = a[a.length-1];
 ```
-Then MaxHeapify the array
-Note that:
+Then MaxHeapify the array.
 
-- To detach the element, you need to do **HeapSize--**
+Note that:
+To detach the element, you need to do **HeapSize--**
 ```java
 public static void HeapExtractMax(double[] a) {
     //BuildMaxHeap(a);
@@ -147,8 +136,7 @@ public static void MaxHeapIncreaseKey(double[] a, int i, double value){
 Tricky: re-use code MaxHeapIncreaseKey
 
 Note that:
-
-- Implementation below copy the original array, which means modifications are made on the new array, be careful.
+Implementation below copy the original array, which means modifications are made on the new array, be careful.
 ```java
 public static void MaxHeapInsert(double[] a, double value){
     double[] heap = new double[a.length+1];

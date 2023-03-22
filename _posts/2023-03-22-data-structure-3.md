@@ -170,6 +170,7 @@ public static void MaxHeapInsert(double[] a, double value){
 
 
 ## Time Complexity Analysis
+
 |Max Heapify|Build Max Heap|Increase Key|Heap Sort|Extract Max|Heap Insert|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |$$O(log\ n)$$|$$O(n)$$|$$O(log\ n)$$|$$O(nlog\ n)$$|$$O(log\ n)$$|$$O(log\ n)$$|

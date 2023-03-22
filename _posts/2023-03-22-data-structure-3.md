@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Data Structure Lecture 3
-date:   2023-03-27 08:00:00
+date:   2023-03-22 08:00:00
 description: 
 tags: Lecture_Notes 
 categories: Data_Structure Heap

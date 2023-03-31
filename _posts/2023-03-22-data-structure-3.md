@@ -178,7 +178,7 @@ The time complexity of BuildMaxHeap non-trivial:
 
 
 \begin{align}
-\sum_{h=0}^{log\ n} \frac{n}{2^h + 1} \times O(h) = O(\sum_{h=0}^{log\ n}\frac{nh}{2^h + 1}) \\
+\sum_{h=0}^{log\ n} \frac{n}{2^h + 1} \times O(h) & = O(\sum_{h=0}^{log\ n}\frac{nh}{2^h + 1}) \\
 & =O(n\sum_{h=0}^{log\ n}\frac{h}{2^h + 1}) \\
 & =O(n\sum_{h=0}^{log\ n}\frac{h}{2^h}) \\
 & =O(2n\sum_{h=0}^{log\ n}2^{-h}) \\

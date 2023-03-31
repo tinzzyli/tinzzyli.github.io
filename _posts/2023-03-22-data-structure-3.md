@@ -156,7 +156,6 @@ public static void MaxHeapIncreaseKey(double[] a, int i, double value){
 
 ## Max Heap Insert
 Tricky: re-use code MaxHeapIncreaseKey
-
 Note that:
 Implementation below copy the original array, which means modifications are made on the new array, be careful.
 ```java
@@ -175,7 +174,17 @@ public static void MaxHeapInsert(double[] a, double value){
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |$$O(log\ n)$$|$$O(n)$$|$$O(log\ n)$$|$$O(nlog\ n)$$|$$O(log\ n)$$|$$O(log\ n)$$|
 
-Homework: Prove the tighter bound of the time complexity of Build Max Heap.
+The time complexity of BuildMaxHeap non-trivial:
+
+
+\begin{align}
+\sum_{h=0}^{log\ n} \frac{n}{2^h + 1} \times O(h) = O(\sum_{h=0}^{log\ n}\frac{nh}{2^h + 1}) \\
+& =O(n\sum_{h=0}^{log\ n}\frac{h}{2^h + 1}) \\
+& =O(n\sum_{h=0}^{log\ n}\frac{h}{2^h}) \\
+& =O(2n\sum_{h=0}^{log\ n}2^{-h}) \\
+& =O(2n \times \frac{2^0(1-2^{-log\ n})}{2}) \\
+=O(n)
+\end{align}
 
 
 [1] When I wrote this post, I found this [handout](https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf) from CSAIL really helpful.

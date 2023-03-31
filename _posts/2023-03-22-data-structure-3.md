@@ -16,22 +16,31 @@ categories: Data_Structure Heap
   - [Max Heap Increase Key](#max-heap-increase-key)
   - [Max Heap Insert](#max-heap-insert)
   - [Time Complexity Analysis](#time-complexity-analysis)
+- [Counting and Radix (sorting algorithms for integers)](#counting-and-radix-sorting-algorithms-for-integers)
   - [Counting Sort](#counting-sort)
   - [Radix Sort](#radix-sort)
 
-
 # Heap Algorithms
+
 Heap is a binary-tree-like data structure. As indexed from $$0$$ to $$arr.length-1$$, the relationship between parent node and children nodes can be demostrated as:
 
+$$
+\begin{equation}
+left\_child = parent * 2 + 1
+\end{equation}
+$$
 
-$$ left\_child = parent * 2 + 1 $$
+$$
+\begin{equation}
+right\_child = parent * 2 + 2
+\end{equation}
+$$
 
-
-$$ right\_child = parent * 2 + 2 $$
-
-
-$$ parent = \lfloor(child-1)/2\rfloor $$
-
+$$
+\begin{equation}
+parent = \lfloor(child-1)/2\rfloor
+\end{equation}
+$$
 
 To better understand heap, we do 6 steps from easy to hard:
 
@@ -45,10 +54,8 @@ To better understand heap, we do 6 steps from easy to hard:
 
 ## Max Heapify
 
-MaxHeapify is a recursion process. $$Assumed that the left branch and right branch of node i are max heaps$$, calling MaxHeapify at $$i$$ would move $$i$$ from top to a proper position recursively. Please pay attention to the terminal state of the recursion.
-
-**Note that:**
-1. Index out of range check should go first
+1. MaxHeapify is a recursion process. **Assumed that the left branch and right branch of node i are max heaps**, calling MaxHeapify at $$i$$ would move $$i$$ from top to a proper position recursively. Please pay attention to the terminal state of the recursion.
+2. Index out of range check should go first
 
 ```java
 public static void MaxHeapify(double[] a, int parent_idx, int heapSize){
@@ -73,13 +80,12 @@ public static void MaxHeapify(double[] a, int parent_idx, int heapSize){
 }
 ```
 
-
 ## Build Max Heap
-When iteratively called MaxHeapify on each node from $$arr.length/2$$ to $$0$$, the array is now a max heap.
 
-**Note that:**
-1. Iteration starts from arr.length/2 to 0.
-2. The value of $$i$$ decreases in iteration.
+1. When iteratively called MaxHeapify on each node from $$arr.length/2$$ to $$0$$, the array is now a max heap.
+2. Iteration starts from arr.length/2 to 0.
+3. The value of $$i$$ decreases in iteration.
+
 ```java
 public static void BuildMaxHeap(double[] a){
     int heapSize = a.length;
@@ -90,14 +96,11 @@ public static void BuildMaxHeap(double[] a){
 }
 ```
 
-
 ## Heap Sort
-By re-use the codes above, we can swap the $$0^{th}$$ element and the $$arr.length-1$$ element, detached the last element, then do Build Max Heap at $$0^{th}$$ node.
 
-This can work because the character of Max Heap: the first element is the biggest. We use a for loop to iteratively detach the biggest element in the array, a ascending sorted array can be formed.
-
-**Note that:**
-The array **MUST** be a Max Heap before swap, and this rule works for **every** function mentioned below.
+1. By re-use the codes above, we can swap the $$0^{th}$$ element and the $$arr.length-1$$ element, detached the last element, then do Build Max Heap at $$0^{th}$$ node.
+2. This can work because the character of Max Heap: the first element is the biggest. We use a for loop to iteratively detach the biggest element in the array, a ascending sorted array can be formed.
+3. The array **MUST** be a Max Heap before swap, and this rule works for **every** function mentioned below.
 
 ```java
 public static void HeapSort(double[] a){
@@ -115,7 +118,9 @@ public static void HeapSort(double[] a){
 ```
 
 ## Heap Extract Max
-To remove the biggest element(of course you can also return it), we simply do:
+
+1. To remove the biggest element(of course you can also return it), we simply do:
+
 ```java
 a[0] = a[a.length-1];
 ```
@@ -131,12 +136,11 @@ public static void HeapExtractMax(double[] a) {
 }//extract max element
 ```
 
-
 ## Max Heap Increase Key
-Increasing the value of a node will **ONLY** affect its parent node and its parent's parent...
 
-**Be careful:**
- Key value must be large than current value.
+1. Increasing the value of a node will **ONLY** affect its parent node and its parent's parent...
+2. Key value must be large than current value.
+
 ```java
 public static int getParentIndex(int currIndex){
     return (int) Math.floor((currIndex-1)/2);
@@ -158,9 +162,10 @@ public static void MaxHeapIncreaseKey(double[] a, int i, double value){
 
 
 ## Max Heap Insert
-Tricky: re-use code MaxHeapIncreaseKey
-**Note that:**
-Implementation below copy the original array, which means modifications are made on the new array, be careful.
+
+1. Tricky: re-use code MaxHeapIncreaseKey
+2. Implementation below copy the original array, which means modifications are made on the new array, be careful.
+
 ```java
 public static void MaxHeapInsert(double[] a, double value){
     double[] heap = new double[a.length+1];
@@ -170,7 +175,6 @@ public static void MaxHeapInsert(double[] a, double value){
 }
 ```
 
-
 ## Time Complexity Analysis
 
 |Max Heapify|Build Max Heap|Increase Key|Heap Sort|Extract Max|Heap Insert|
@@ -178,7 +182,6 @@ public static void MaxHeapInsert(double[] a, double value){
 |$$O(log\ n)$$|$$O(n)$$|$$O(log\ n)$$|$$O(nlog\ n)$$|$$O(log\ n)$$|$$O(log\ n)$$|
 
 The time complexity of BuildMaxHeap non-trivial:
-
 
 $$
 \begin{equation}
@@ -193,8 +196,14 @@ $$
 \end{equation}
 $$
 
+# Counting and Radix (sorting algorithms for integers)
+
+When invloving negative integers, add the absolute value of the smallest number to each element.
 
 ## Counting Sort
+
+1. Counting sort is a **stable** sorting algorithm, that is very important. Without this feature, radix sort cannot be built.
+
 ```java
 public static int getMax(int a[]){
     int ret = 0;
@@ -209,19 +218,27 @@ public static int getMax(int a[]){
 public static void countingSort(int[] a){
     //counting sort takes 3 inputs: the unsorted array A; empty array B to put sorted elements; max element K in A
     int k = getMax(a);
+    //k+1 numbers from 0 to k
     int[] c = new int[k+1];
     int[] b = new int[a.length];
 
+    //count occurence of element in array a
     for(int i=0; i<a.length; i++){
         ++c[a[i]];
     }
 
+    //calculate positions
     for(int i=1; i<=k; i++){
         c[i] += c[i-1];
     }
 
+    //the KEY step
     //down to 1
     for(int i=a.length-1; i>=0; i--){
+        //RHS of the equation is obviously a[i] because we are iterating array a
+        //by reading array c, we can know the desired position of eleme t a[i]
+        //why minus 1?
+        //because array index start from 0
         b[c[a[i]] - 1] = a[i];
         --c[a[i]];
     }
@@ -234,6 +251,7 @@ public static void countingSort(int[] a){
 ```
 
 ## Radix Sort
+
 ```java
 public static int getMax(int a[]){
     int ret = 0;
@@ -281,5 +299,6 @@ public static void radixSort(int[] a){
         _countingSort(a, exp);
 }
 ```
+
 
 [1] When I wrote this post, I found this [handout](https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf) from CSAIL really helpful.

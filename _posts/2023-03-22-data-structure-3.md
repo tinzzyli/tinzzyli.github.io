@@ -124,10 +124,11 @@ public static void HeapSort(double[] a){
 ```java
 a[0] = a[a.length-1];
 ```
+
 Then MaxHeapify the array.
 
-**Note that:**
 To detach the element, you need to do $$heapSize--$$
+
 ```java
 public static void HeapExtractMax(double[] a) {
     //BuildMaxHeap(a);

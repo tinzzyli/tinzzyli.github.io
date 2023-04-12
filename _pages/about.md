@@ -21,6 +21,6 @@ Hi,
 
 I am a junior student at [Dalian University of Technology](https://en.dlut.edu.cn/), also a research assistant at [Univeristy of Texas, Dallas](https://www.utdallas.edu/), I am very fortunate to be advised by [Prof. Yang](http://youngwei.com/) and [Prof. Xiang](https://yuxng.github.io/). Before that, I took a gap year in Europe as a visiting student at [Technical University of Munich](https://www.tum.de/en/) and spent time traveling across countries.
 
-My primary research interest lies in adversarial machine learning, robotics and FATE in AI.
+My primary research interest lies in robust ML, robotics and AI4Science.
 
 I am actively looking for a Ph.D. position in 2024, please email me if you have any questions :)

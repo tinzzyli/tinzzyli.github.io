@@ -638,7 +638,7 @@ footer.sticky-bottom {
 
 figure.highlight {
   margin: 0 0 1rem;
-
+}
   code {
     font-family: "Fira Code", monospace;
     font-size: 0.85em;
@@ -652,7 +652,7 @@ figure.highlight {
     margin: 1.5em 0;
   }
 
-  .line-numbers {
+  line-numbers {
     color: #6D7891;
     display: inline-block;
     font-size: 0.85em;
@@ -663,13 +663,13 @@ figure.highlight {
     width: 3.5em;
   }
 
-  .highlighted-line {
+  highlighted-line {
     background-color: #3B3B3B;
     display: block;
     margin: 0 -1em;
     padding: 0 1em;
   }
-}
+
 //========================================new code block style====
 
 

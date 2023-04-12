@@ -610,65 +610,65 @@ footer.sticky-bottom {
 }
 
 // Rouge Color Customization
-// figure.highlight {
-//   margin: 0 0 1rem;
-// }
+figure.highlight {
+  margin: 0 0 1rem;
+}
 
-// pre {
-//   color: var(--global-theme-color);
-//   background-color: var(--global-code-bg-color);
-//   border-radius: 6px;
-//   padding: 6px 12px;
-//   pre, code {
-//     background-color: transparent;
-//     border-radius: 0;
-//     padding: 0;
-//   }
-// }
+pre {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+  pre, code {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+}
 
-// code {
-//   color: var(--global-theme-color);
-//   background-color: var(--global-code-bg-color);
-//   border-radius: 3px;
-//   padding: 3px 3px;
-// }
+code {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 3px;
+  padding: 3px 3px;
+}
 
 //========================================new code block style====
 
 
-figure.highlight {
-  margin: 0 0 1rem;
-}
-  code {
-    font-family: "Fira Code", monospace;
-    font-size: 0.85em;
-    line-height: 1.4;
-    display: block;
-    background-color: #2B2B2B;
-    color: #D6DEEB;
-    padding: 1em;
-    border-radius: 4px;
-    overflow-x: auto;
-    margin: 1.5em 0;
-  }
+// figure.highlight {
+//   margin: 0 0 1rem;
+// }
+//   code {
+//     font-family: "Fira Code", monospace;
+//     font-size: 0.85em;
+//     line-height: 1.4;
+//     display: block;
+//     background-color: #2B2B2B;
+//     color: #D6DEEB;
+//     padding: 1em;
+//     border-radius: 4px;
+//     overflow-x: auto;
+//     margin: 1.5em 0;
+//   }
 
-  line-numbers {
-    color: #6D7891;
-    display: inline-block;
-    font-size: 0.85em;
-    margin: 0;
-    padding-right: 1em;
-    text-align: right;
-    user-select: none;
-    width: 3.5em;
-  }
+//   line-numbers {
+//     color: #6D7891;
+//     display: inline-block;
+//     font-size: 0.85em;
+//     margin: 0;
+//     padding-right: 1em;
+//     text-align: right;
+//     user-select: none;
+//     width: 3.5em;
+//   }
 
-  highlighted-line {
-    background-color: #3B3B3B;
-    display: block;
-    margin: 0 -1em;
-    padding: 0 1em;
-  }
+//   highlighted-line {
+//     background-color: #3B3B3B;
+//     display: block;
+//     margin: 0 -1em;
+//     padding: 0 1em;
+//   }
 
 
 //========================================new code block style====

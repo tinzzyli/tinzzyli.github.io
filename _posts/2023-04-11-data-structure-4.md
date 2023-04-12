@@ -6,6 +6,7 @@ description:
 tags: Lecture_Notes 
 categories: Data_Structure BinaryTree LinkedList
 ---
+
 - [Stack and Queue](#stack-and-queue)
   - [Stack](#stack)
   - [Queue](#queue)

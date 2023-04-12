@@ -32,21 +32,23 @@ public static void func2(){
 }
 ```
 
-
 # When to use Recursion?
 
 #### Recursion originates in Mathematical Induction(MI)
 
 MI
+
 1. prove when n == 1, the proposition holds.
 2. if when n == k the proposition holds, prove that the proposition holds for n == k+1.
 
 Recursion
+
 1. To solve n == k, we need to know the result of n == k-1
 2. To solve n == k-1, we need to know the result of n == k-2..., this is a so-called bottom-up process.
 3. Solve n == 1, then n == 2..., n == k
 
 #### Fibonacci
+
 ```java
 public static int Fib(int n){
     if (n == 1){return 1;}
@@ -70,6 +72,7 @@ public static int iterFib(int n){
 ```
 
 #### Factorial
+
 ```java
 public static int Fac(int n){
     if (n == 1){return 1;}
@@ -87,6 +90,7 @@ public static int iterFac(int n){
 ```
 
 #### Hanoi Tower
+
 ```java
 public static void Hanoi(char A, char B, char C, int n){
     if (n == 1){
@@ -99,6 +103,7 @@ public static void Hanoi(char A, char B, char C, int n){
 ```
 
 #### Quick Sort
+
 ```java
 public static void quickSort(double[] a, int left, int right){
     if(left<=right){

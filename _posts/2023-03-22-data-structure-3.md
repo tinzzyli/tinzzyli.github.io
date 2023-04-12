@@ -203,7 +203,9 @@ When invloving negative integers, add the absolute value of the smallest number 
 
 ## Counting Sort
 
-1. Counting sort is a **stable** sorting algorithm, that is very important. Without this feature, radix sort cannot be built.
+Counting sort is an algorithm used to sort integers in linear time. To implement counting sort in Java, we need to create an array of counters and use it to count the frequency of each integer in the input array. Then, we can use this information to create a sorted output array. Common mistakes in implementing counting sort in Java include not allocating enough memory for the counters array, not taking into account negative numbers or non-integer values, and not properly handling duplicate elements. It is also important to consider the range of the input values and to choose an appropriate data type for the counters array.
+
+Counting sort is a **stable** sorting algorithm, that is very important. Without this feature, radix sort cannot be built.
 
 ```java
 public static int getMax(int a[]){
@@ -253,6 +255,8 @@ public static void countingSort(int[] a){
 
 ## Radix Sort
 
+Radix sort is a non-comparison-based sorting algorithm that sorts data by grouping elements according to their digit values. In Java, it can be implemented using arrays and loops. Key points include the choice of radix (base) and the number of digits, as well as the use of counting sort as a subroutine. Common mistakes include incorrect array indexing, forgetting to handle negative numbers, and not considering the memory constraints of the algorithm. Radix sort has a time complexity of $$O(nk)$$, where n is the number of elements and k is the number of digits in the largest element.
+
 ```java
 public static int getMax(int a[]){
     int ret = 0;
@@ -300,6 +304,5 @@ public static void radixSort(int[] a){
         _countingSort(a, exp);
 }
 ```
-
 
 [1] When I wrote this post, I found this [handout](https://courses.csail.mit.edu/6.006/fall10/handouts/recitation10-8.pdf) from CSAIL really helpful.

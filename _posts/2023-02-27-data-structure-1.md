@@ -29,7 +29,11 @@ categories: Data_Structure
 
 # Sorting Algorithms and Java Implementation
 
+Sorting algorithms are used to arrange data in a specific order. They can be categorized into two types: comparison-based and non-comparison-based. Common comparison-based algorithms include bubble sort, insertion sort, selection sort, quick sort, merge sort, and heap sort. Non-comparison-based algorithms include counting sort, radix sort, and bucket sort.
+
 ### Bubble Sort
+
+Bubble sort is a simple sorting algorithm that repeatedly swaps adjacent elements if they are in the wrong order. In Java, it can be implemented using nested loops and swapping elements. Key points include the time complexity of $$O(n^2)$$, space complexity of $$O(1)$$, and stable sorting algorithm. Common mistakes include incorrect loop conditions, not swapping elements correctly, and not handling edge cases. The efficiency of bubble sort makes it less suitable for large datasets.
 
 ```markdown
 # Pseudo Code
@@ -71,6 +75,8 @@ public class SortingAlgorithms {
 ```
 
 ### Selection Sort
+
+Selection sort is a sorting algorithm where the minimum element in an array is selected and swapped with the first element. This process is repeated for the remaining unsorted part of the array. Key points of implementing selection sort in Java include using nested loops to iterate over the array, keeping track of the minimum element, and swapping elements. Common mistakes include off-by-one errors, not swapping elements correctly, and using an inefficient implementation. Time complexity is $$O(n^2)$$.
 
 ```markdown
 # Pseudo Code
@@ -115,6 +121,8 @@ public class SortingAlgorithms {
 
 ### Insertion Sort
 
+Insertion sort is a simple sorting algorithm that iterates through an array and places each element in its proper position. In Java, it can be implemented using a for loop and nested while loop. Key points include its $$O(n^2)$$ time complexity, suitability for small arrays, and stability. Common mistakes include incorrect loop conditions, incorrect element swapping, and not considering the edge cases.
+
 ```markdown
 # Pseudo Code
 init value, position = null
@@ -151,6 +159,8 @@ public class SortingAlgorithms {
 ```
 
 ### Shell Sort
+
+Shell sort is an in-place sorting algorithm that involves comparing and swapping elements at certain intervals. In Java, it can be implemented using a loop and an insertion sort algorithm. Key points include selecting appropriate gap sequence, breaking down the input into sub-lists, and sorting each sub-list using insertion sort. Common mistakes include incorrect gap sequence, improper implementation of insertion sort, and not handling edge cases properly.
 
 ```markdown
 # Pseudo Code
@@ -211,6 +221,8 @@ public class SortingAlgorithms {
 
 ### Merge Sort
 
+To implement merge sort in Java, one needs to define a recursive function that splits the input array in half until it contains only one or zero elements. The subarrays are then merged in a sorted manner. Key points include the time complexity of $$O(nlogn)$$, space complexity of $$O(n)$$, and stable sorting. Common mistakes include not handling edge cases correctly, using the wrong indices while merging subarrays, and not checking if the input array is already sorted before starting the sorting algorithm.
+
 ```markdown
 # Pseudo Code
 init left = 0
@@ -270,6 +282,8 @@ public class SortingAlgorithms {
 ```
 
 ### Quick Sort
+
+Quick sort is a popular sorting algorithm that uses the divide-and-conquer approach. In Java, it can be implemented using recursion or iteration. Key points include choosing a pivot element, partitioning the array, and recursively sorting subarrays. Common mistakes include not handling edge cases, choosing a poorly optimized pivot element, and not properly checking for array bounds. The worst-case time complexity of quick sort is $$O(n^2)$$, but with proper optimizations, it can achieve $$O(nlogn)$$ in average and best cases.
 
 ```markdown
 # Pseudo Code

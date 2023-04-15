@@ -164,6 +164,10 @@ A sentinel-based circular linked list is a linked list data structure that uses 
 
 Common mistakes include forgetting to initialize the sentinel node, incorrectly updating the last node's next pointer, and failing to properly handle insertions and deletions at the beginning and end of the list. Additionally, it's important to ensure that the list is properly freed from memory when it is no longer needed to avoid memory leaks.
 
+{% include figure.html path="assets/img/sentinel.png" class="img-fluid rounded z-depth-1" %}
+
+> Please note that the image displayed above is the creative work of [website](http://www.programming-algorithms.net/article/40616/Linked-list).
+
 Generally, a sentinel circular linked-list is made up with ***class ListNode*** with attributes/functions:
 
 - int: key
@@ -251,6 +255,8 @@ static class SentinelLinkedList{
 # Binary Tree
 
 Implementing a binary tree involves defining a node class, setting up pointers between nodes, and implementing operations like insertion, deletion, and traversal. Common mistakes include forgetting to handle null cases, not correctly updating pointers during insertion or deletion, and inefficient traversal algorithms. Recursive solutions can also lead to stack overflow errors if not properly implemented. It's important to thoroughly test the implementation to ensure correct functionality.
+
+Let us take the binary tree below as a paradigmatic instance:
 
 {% include figure.html path="assets/img/BinaryTree.png" class="img-fluid rounded z-depth-1" %}
 

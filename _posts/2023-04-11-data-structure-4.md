@@ -252,6 +252,8 @@ static class SentinelLinkedList{
 
 Implementing a binary tree involves defining a node class, setting up pointers between nodes, and implementing operations like insertion, deletion, and traversal. Common mistakes include forgetting to handle null cases, not correctly updating pointers during insertion or deletion, and inefficient traversal algorithms. Recursive solutions can also lead to stack overflow errors if not properly implemented. It's important to thoroughly test the implementation to ensure correct functionality.
 
+{% include figure.html path="assets/img/BinaryTree.png" class="img-fluid rounded z-depth-1" %}
+
 Generally, a binary tree contains ***class TreeNode*** with attributes/functions:
 
 - char: key

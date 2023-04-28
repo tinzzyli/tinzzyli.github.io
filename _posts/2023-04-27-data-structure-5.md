@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Data Structure Lecture 5
-date:   2023-04-27 08:00:00
+date:   2023-04-28 08:00:00
 description: 
 tags: Lecture_Notes 
 categories: Data_Structure BinarySearchTree DFS BFS

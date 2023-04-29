@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  Data Structure Lecture 7
-date:   2023-04-29 18:00:00
+date:   2023-04-29 09:00:00
 description: 
 tags: Lecture_Notes 
-categories: Data_Structure Graph ShortestPath
+categories: Data_Structure ShortestPath Graph
 ---
 
 # Shortest Path on UDG (UnDirected Graph)

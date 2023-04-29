@@ -8,7 +8,7 @@ categories: Data_Structure DFS BFS Graph
 ---
 
 - [Graph](#graph)
-  - [Construction: Adjacency List \& Adjacency Matrix](#construction-adjacency-list--adjacency-matrix)
+  - [Construction: Adjacency List and Adjacency Matrix](#construction-adjacency-list-and-adjacency-matrix)
   - [BFS: Breadth First Search](#bfs-breadth-first-search)
   - [DFS: Depth First Search](#dfs-depth-first-search)
 
@@ -16,7 +16,7 @@ categories: Data_Structure DFS BFS Graph
 
 Generally, graphs can be catergorized as *undirected graph* and *directed graph*, in this chapter, we use unweighted undirected graph to illustrate most cases. :)
 
-## Construction: Adjacency List & Adjacency Matrix
+## Construction: Adjacency List and Adjacency Matrix
 
 ```java
 public static class IndirectGraph{

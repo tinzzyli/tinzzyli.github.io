@@ -4,8 +4,20 @@ title:  Data Structure Lecture 5
 date:   2023-04-28 08:00:00
 description: 
 tags: Lecture_Notes 
-categories: Data_Structure BinarySearchTree DFS BFS
+categories: Data_Structure BinaryTree
 ---
+
+- [Binary Search Tree(BST)](#binary-search-treebst)
+  - [Build Tree](#build-tree)
+  - [Tree Maximum](#tree-maximum)
+  - [Tree Minimum](#tree-minimum)
+  - [isBST](#isbst)
+  - [In Order Traversal of BST](#in-order-traversal-of-bst)
+  - [Recursive and Iterative Search of BST](#recursive-and-iterative-search-of-bst)
+  - [Successor and Predeccessor](#successor-and-predeccessor)
+  - [Tree Depth](#tree-depth)
+  - [Insert and Delete Tree Node](#insert-and-delete-tree-node)
+
 
 # Binary Search Tree(BST)
 
@@ -13,7 +25,7 @@ For an arbitrary node in a BST, all nodes (if there is any) in its left branch i
 
 For an arbitrary node in a BST, its left child and right child are binary search trees, too.
 
-BST is a data structure of high efficiency, insertion and deletion in BST has a $$O(log n)$$ time complexity.
+BST is a data structure of high efficiency, insertion and deletion in BST has a $$O(log\ n)$$ time complexity.
 
 However, a BST might be constructed imbalancedly, in which cases we introduce AVL tree and red-black tree.
 
@@ -46,19 +58,24 @@ public static class BinaryTree {
         root.right.right = new TreeNode(9);
         root.left.left.left = new TreeNode(1);
         root.left.left.right = new TreeNode(3);
-//BST:
-//                      6
-//                    /   \
-//                   4     8
-//                  / \   / \
-//                 2   5 7   9
-//                / \
-//               1   3
+
+                     6
+                   /   \
+                  4     8
+                 / \   / \
+                2   5 7   9
+               / \
+              1   3
+
         return root;
     }
 }
 
 ```
+
+{% include figure.html path="assets/img/bst.png" class="img-fluid rounded z-depth-1" %}
+
+> power by draw.io :)
 
 ## Tree Maximum
 

@@ -85,6 +85,47 @@ public static void main(String [] args){
 ## Vanilla Dijkstra Algorithm
 
 ```java
+public static int [] Dijkstra(int [][]graph, char _start){
+    int start = _start-'A';
+    boolean [] visited;
+    int [] distance;
+
+    visited = new boolean[graph.length];
+    distance = new int[graph.length];
+
+    Arrays.fill(distance, Integer.MAX_VALUE);
+    Arrays.fill(visited, false);
+
+    distance[start] = 0;
+
+    for(int i = 0; i < graph.length - 1; i++){
+        int minDist = Integer.MAX_VALUE;
+        int minNode = -1;
+
+        for (int j = 0; j < distance.length; j++) {
+            if (!visited[j] && distance[j] < minDist) {
+                minDist = distance[j];
+                minNode = j;
+            }
+        }
+
+        if (minNode == -1) {
+            break; 
+        }
+
+        int u = minNode;
+        visited[u] = true;
+
+        for (int v=0; v < graph.length; v++){
+            if(graph[u][v] < Integer.MAX_VALUE && !visited[v] && distance[v] > distance[u] + graph[u][v] ){
+                distance[v] = distance[u] + graph[u][v];
+            }
+        }
+    }
+
+    return distance;
+
+}
 
 ```
 
@@ -116,9 +157,6 @@ public static int [] DijkstraAlg(int [][] graph, int start){
         int u = pq.poll();
         visited[u] = true;
 
-        //if (v == start){return distance;}
-
-        if (!visited[u]){continue;}
 
         for (int v=0; v < graph.length; v++){
             if(graph[u][v] < Integer.MAX_VALUE && !visited[v] && distance[v] > distance[u] + graph[u][v] ){

@@ -12,7 +12,6 @@ categories: Data_Structure DFS BFS Graph
   - [BFS: Breadth First Search](#bfs-breadth-first-search)
   - [DFS: Depth First Search](#dfs-depth-first-search)
 
-
 # Graph
 
 Generally, graphs can be catergorized as *undirected graph* and *directed graph*, in this chapter, we use unweighted undirected graph to illustrate most cases. :)

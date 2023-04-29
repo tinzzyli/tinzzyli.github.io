@@ -18,7 +18,6 @@ categories: Data_Structure BinaryTree
   - [Tree Depth](#tree-depth)
   - [Insert and Delete Tree Node](#insert-and-delete-tree-node)
 
-
 # Binary Search Tree(BST)
 
 For an arbitrary node in a BST, all nodes (if there is any) in its left branch is smaller than itself, vice versa for its right hand side.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Data Structure Lecture 4
-date:   2023-04-29 08:00:00
+title:  Data Structure Lecture 7
+date:   2023-04-29 18:00:00
 description: 
 tags: Lecture_Notes 
 categories: Data_Structure Graph ShortestPath

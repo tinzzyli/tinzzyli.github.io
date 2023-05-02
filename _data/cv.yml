@@ -11,8 +11,8 @@
 - title: Education
   type: time_table
   contents:
-      - title: Bachelor of Science
-      institution: Dalian University of Technology
+    - title: Bachelor of Science
+      institution: University of Leicester
       year: 2019 - 2024
       description:
         - B.S. - Applied Chemistry
@@ -44,7 +44,7 @@
         - Use gradient information from a differentiable renderer to produce adversarial examples.
 
     - title: Research Assistant
-]      year: 2022
+      year: 2022
       description:
         - Investigate the robustness of Vision Transformers (ViT), proved ViT to be more vulnerable than CNN under adversarial attacks.
         - By applying a negative data augmentation and modifying the loss function, lowered the fooling rate.
@@ -77,7 +77,7 @@
   contents:
     - year: 2023
       items: 
-        - Dalian University of Technology Student Scholarship
+        - Dalian University of Technology Innovative Student Scholarship
 
 
 - title: Academic Interests
@@ -93,7 +93,7 @@
         - Development of autonomous robots for industrial and service applications
         - Exploring the use of machine learning and computer vision techniques to enhance the perception and decision-making abilities of robots in complex and dynamic environments
     - title: AI for science
-    
+        - AI aided chemistry and physics research.
 - title: Other Interests
   type: list
   contents:

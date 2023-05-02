@@ -7,6 +7,12 @@ tags: Lecture_Notes
 categories: Data_Structure ShortestPath Graph
 ---
 
+- [Shortest Path on UDG (UnDirected Graph)](#shortest-path-on-udg-undirected-graph)
+  - [Weighted UDG](#weighted-udg)
+  - [Vanilla Dijkstra Algorithm](#vanilla-dijkstra-algorithm)
+  - [Dijkstra Algorithm with Priority Queue](#dijkstra-algorithm-with-priority-queue)
+
+
 # Shortest Path on UDG (UnDirected Graph)
 
 The shortest path algorithm is a fundamental concept in graph theory that finds the most efficient route between two nodes in a graph. It has numerous applications, including navigation systems, network routing protocols, and resource allocation problems. The importance of this algorithm lies in its ability to solve optimization problems that involve finding the path with minimum cost or distance. By minimizing the number of steps or distance traveled, the algorithm can save time and resources. The shortest path algorithm is widely used in computer science, operations research, and transportation engineering.

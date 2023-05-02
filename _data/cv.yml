@@ -11,16 +11,23 @@
 - title: Education
   type: time_table
   contents:
+      - title: Bachelor of Science
+      institution: Dalian University of Technology
+      year: 2019 - 2024
+      description:
+        - B.S. - Applied Chemistry
+        - title: Core Courses
+          contents:
+            - Computational Chemistry; Physical Chemistry
+
     - title: Bachelor of Science
       institution: Dalian University of Technology
       year: 2019 - 2024
       description:
-        - B.S. - Computer Science
         - B.S. - Applied Chemistry
         - title: Core Courses
           contents:
             - C programming; Data Structure and Algorithms; Database; Computer Architecture; Computer Networks
-            - Computational Chemistry; Physical Chemistry
      
     - title: Visiting Student
       institution: Technical University of Munich
@@ -31,34 +38,29 @@
   type: time_table
   contents:
     - title: Research Assistant
-      institution: University of Texas, Dallas
       year: 2022 - now
       description:
         - Design adversarial attack approaches for an object grasping benchmark.
         - Use gradient information from a differentiable renderer to produce adversarial examples.
 
     - title: Research Assistant
-      institution: University of California, Santa Barbara
-      year: 2022
+]      year: 2022
       description:
         - Investigate the robustness of Vision Transformers (ViT), proved ViT to be more vulnerable than CNN under adversarial attacks.
         - By applying a negative data augmentation and modifying the loss function, lowered the fooling rate.
         
         
     - title: Research Intern
-      institution: TenClass Inc., Shenzhen, China
       year: 2022
       description:
         - Responsible for building a virtual host for TikTok live streaming mostly based on an open resource project wav2lip.
         - Made modifications to the model and fine-tune it on a private dataset.
 
     - title: Research Assistant
-      institution: Carnegie Mellon University
       year: 2021
       description: 
         - A survey of popular financial fraud detection algorithms and put forward suggestions for improvement.
         - Comparison of unsupervised outlier scores computed at different levels of granularity.
-        - The research result is published as Deep Learning Techniques for Financial Fraud Detection.
         
 
 
@@ -90,6 +92,8 @@
       items:
         - Development of autonomous robots for industrial and service applications
         - Exploring the use of machine learning and computer vision techniques to enhance the perception and decision-making abilities of robots in complex and dynamic environments
+    - title: AI for science
+    
 - title: Other Interests
   type: list
   contents:

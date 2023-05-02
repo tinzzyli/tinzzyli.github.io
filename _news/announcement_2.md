@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A breif research statement(a little of out dated)
+title: A breif research statement
 date: 2023-1-23 17:05:00-0800
 inline: false
 ---
@@ -8,4 +8,3 @@ inline: false
 My primary research interest lies in explainable artificial intelligence(Explainable AI). I am particularly interested in investigating the robustness of neural networks under distribution shift or malicious attack. My interest in building a robust model stems from two sources. First, I want to build reliable neural networks. AI has achieve unprecedented success with very high accuracy and intelligence, one example is ChatGPT, it is a state of the art language model but weak in robustness. "ChatGPT is sometimes amazing and sometimes hilariously wrong", tweeted by Andrew Ng, a leading scientist in machine learning. Second, I want to build explainable neural networks. Neural networks can be trained to make accurate predictions but with poor explainability, it is difficult to provide readable and understandable reasons for decisions made by neural networks, which is a necessity when AI is applied to autonomous driving, medical imaging, etc.
 
 The focus of my research is on developing adversarial attack techniques for robotic manipulation algorithms and make modifications to them, turning the vanilla model into a robust, interpretable one. Based on BulletArm, a novel benchmark and learning-environment for robotic manipulation [1](https://github.com/ColinKohler/BulletArm). I designed two adversarial attack approaches for the object grasping benchmark, one is adding a opponent object that takes a random move between two action of the ally agent, the opponent agent attempted accuracy attacks and energy attacks by changing the layout [2](https://openreview.net/pdf?id=r88Isj2alz). Another is feeding the model an adversarial example as input to make the agent fail in grasping objects. Each attack technique simulates a possible scenario in industry. I also implemented a differentiable rendering method to replace the original renderer of BulletArm. By using the gradient information from the differentiable renderer, gradient acsent method can be applied to produce adversarial examples with least perturbations. This research makes me well positioned to make further advances in explainable AI. In particular, I believe model explainability and robustness would be brought to the forefront and it will eventually help improve the performance of neural networks.
-

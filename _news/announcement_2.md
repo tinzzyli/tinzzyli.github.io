@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Personal Statement 
-date: 2023-5-7 23:59:00-0800
+date: 2023-5-7 02:30:00-0800
 inline: false
 ---
 
 ### 1 Introduction
-
+ 
 It took me three years to discover what I truly excelled at and loved. While the process was undoubtedly challenging, it was never painful. Before taking a firm step into artificial intelligence, I have spent countless late nights pondering and seeking a balance between computer science and chemistry. Beginning with online courses, I gradually equipped myself with the necessary knowledge and skills for further research. I soon began reaching out to labs and secured a research assistant position.
 
 As someone who does not majoring in computer science, I put in extra effort to reach the same level as those who have specialized in this field. But all the toughness I exprienced are not hateful. Instead, they made up an important part of me, leaving me with an unwavering belief that every step I took would lay a solid foundation for my doctoral research, both in terms of knowledge structure and mental construction.

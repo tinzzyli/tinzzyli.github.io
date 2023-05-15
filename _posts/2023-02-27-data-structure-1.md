@@ -4,7 +4,7 @@ title:  Data Structure Lecture 1
 date:   2023-02-27 08:00:00
 description: 
 tags: Lecture_Notes 
-categories: Data_Structure
+categories: Data_Structure SortingAlgorithms
 ---
 
 - [Introduction](#introduction)

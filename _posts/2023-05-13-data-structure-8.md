@@ -4,7 +4,7 @@ title:  Data Structure Lecture 8
 date:   2023-05-13 08:00:00
 description: 
 tags: Lecture_Notes 
-categories: DynamicProgramming
+categories: Data_Structure DynamicProgramming
 ---
 
 [TOC]

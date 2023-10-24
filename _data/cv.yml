@@ -74,21 +74,21 @@
 #         - Dalian University of Technology Innovative Student Scholarship
 
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Adversarial Robustness
-      items: 
-        - Build image models that robust against malicious attacks and ditribution shift
-        - Build interpretable neural networks
-        - Ethics in AI
-    - title: Robotics
-      items:
-        - Development of autonomous robots for industrial and service applications
-        - Exploring the use of machine learning and computer vision techniques to enhance the perception and decision-making abilities of robots in complex and dynamic environments
-    - title: AI for science
-        - AI aided chemistry and physics research.
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Road Trip, Coding, Hiking, Meditation, etc.
+# - title: Academic Interests
+#   type: nested_list
+#   contents:
+#     - title: Adversarial Robustness
+#       items: 
+#         - Build image models that robust against malicious attacks and ditribution shift
+#         - Build interpretable neural networks
+#         - Ethics in AI
+#     - title: Robotics
+#       items:
+#         - Development of autonomous robots for industrial and service applications
+#         - Exploring the use of machine learning and computer vision techniques to enhance the perception and decision-making abilities of robots in complex and dynamic environments
+#     - title: AI for science
+#         - AI aided chemistry and physics research.
+# - title: Other Interests
+#   type: list
+#   contents:
+#     - <u>Hobbies:</u> Road Trip, Coding, Hiking, Meditation, etc.

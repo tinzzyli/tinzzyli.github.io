@@ -11,73 +11,67 @@
 - title: Education
   type: time_table
   contents:
-    - title: Bachelor of Science
-      institution: University of Leicester
-      year: 2019 - 2024
-      description:
-        - B.S. - Applied Chemistry
-        - title: Core Courses
-          contents:
-            - Computational Chemistry; Physical Chemistry
 
     - title: Bachelor of Science
       institution: Dalian University of Technology
       year: 2019 - 2024
       description:
-        - B.S. - Applied Chemistry
+        - B.S. - Chemistry
         - title: Core Courses
           contents:
-            - C programming; Data Structure and Algorithms; Database; Computer Architecture; Computer Networks
+            - C programming; Data Structure and Algorithms; Database; Computational Chemistry; Physical Chemistry
      
     - title: Visiting Student
       institution: Technical University of Munich
       year: 2022 - 2023
-
-
-- title: Research Experience
-  type: time_table
-  contents:
-    - title: Research Assistant
-      year: 2022 - now
       description:
-        - Design adversarial attack approaches for an object grasping benchmark.
-        - Use gradient information from a differentiable renderer to produce adversarial examples.
+        - Computer Science
 
-    - title: Research Assistant
-      year: 2022
-      description:
-        - Investigate the robustness of Vision Transformers (ViT), proved ViT to be more vulnerable than CNN under adversarial attacks.
-        - By applying a negative data augmentation and modifying the loss function, lowered the fooling rate.
+
+# - title: Research Experience
+#   type: time_table
+#   contents:
+#     - title: Research Assistant
+#       year: 2022 - now
+#       description:
+#         - Design adversarial attack approaches for an object grasping benchmark.
+#         - Use gradient information from a differentiable renderer to produce adversarial examples.
+
+#     - title: Research Assistant
+#       year: 2022
+#       description:
+#         - Investigate the robustness of Vision Transformers (ViT), proved ViT to be more vulnerable than CNN under adversarial attacks.
+#         - By applying a negative data augmentation and modifying the loss function, lowered the fooling rate.
         
         
-    - title: Research Intern
-      year: 2022
-      description:
-        - Responsible for building a virtual host for TikTok live streaming mostly based on an open resource project wav2lip.
-        - Made modifications to the model and fine-tune it on a private dataset.
+#     - title: Research Intern
+#       year: 2022
+#       description:
+#         - Responsible for building a virtual host for TikTok live streaming mostly based on an open resource project wav2lip.
+#         - Made modifications to the model and fine-tune it on a private dataset.
 
-    - title: Research Assistant
-      year: 2021
-      description: 
-        - A survey of popular financial fraud detection algorithms and put forward suggestions for improvement.
-        - Comparison of unsupervised outlier scores computed at different levels of granularity.
+#     - title: Research Assistant
+#       year: 2021
+#       description: 
+#         - A survey of popular financial fraud detection algorithms and put forward suggestions for improvement.
+#         - Comparison of unsupervised outlier scores computed at different levels of granularity.
         
 
 
 
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/tinzzyli/BulletArm">Heightmap-basedAttack</a>
-      year: 2022 - now
-      description: Heighimap-based adversarial attacks against robotic arms 
+# - title: Open Source Projects
+#   type: time_table
+#   contents:
+#     - title: <a href="https://github.com/tinzzyli/BulletArm">Heightmap-basedAttack</a>
+#       year: 2022 - now
+#       description: Heighimap-based adversarial attacks against robotic arms 
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 2023
-      items: 
-        - Dalian University of Technology Innovative Student Scholarship
+# - title: Honors and Awards
+#   type: time_table
+#   contents:
+#     - year: 2023
+#       items: 
+#         - Dalian University of Technology Innovative Student Scholarship
 
 
 - title: Academic Interests

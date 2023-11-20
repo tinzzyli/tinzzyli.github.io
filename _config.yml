@@ -114,9 +114,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: "Research is the only fun I enjoy in my pathetic life" # blog_name will be displayed in your blog page
+blog_name: "Research" # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: -- Dylan Thomas
+blog_description: is the only fun I enjoy in my pathetic life
 permalink: /blog/:year/:title/
 
 # Pagination

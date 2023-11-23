@@ -98,7 +98,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
-  E-mail would be the best ;)
+  Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -114,9 +114,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: "Research" # blog_name will be displayed in your blog page
+blog_name: "BLOG" # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: is the only fun I enjoy in my pathetic life
+blog_description: Do not go gentle into that good night
 permalink: /blog/:year/:title/
 
 # Pagination

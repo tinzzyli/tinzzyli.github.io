@@ -1,31 +1,4 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Tingxi Li
-    - name: Date of Birth
-      value: Dec. 2000
-    - name: Languages
-      value: English, German, Mandarin, Cantonese
 
-- title: Education
-  type: time_table
-  contents:
-
-    - title: Bachelor of Science
-      institution: Dalian University of Technology
-      year: 2019 - 2024
-      description:
-        - B.S. - Chemistry
-        - title: Core Courses
-          contents:
-            - C programming; Data Structure and Algorithms; Database; Computational Chemistry; Physical Chemistry
-     
-    - title: Visiting Student
-      institution: Technical University of Munich
-      year: 2022 - 2023
-      description:
-        - Computer Science
 
 
 # - title: Research Experience

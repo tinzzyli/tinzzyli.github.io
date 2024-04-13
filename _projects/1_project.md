@@ -12,25 +12,20 @@ for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">Bul
 
 In BulletArm, a visual-based agent is used to interact with the environment. BulletArm uses a non-differentiable renderer to obtain heightmaps from the workspace as the observation of the environment.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a
-robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" %}
+robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="width: 50%; margin: 0 auto;" %}
     </div>
-
 </div>
+
 <div class="caption">
     The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)
 </div>
 
-<div class="row">
+DQN takes heightmaps as input and outputs a q value map, it indicates the desired action that the agent should execute. (e.g. The $x, y$ position )
+
+<div class="row justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/obs_1.png" title="example image of observation" class="img-fluid rounded z-depth-1" %}
     </div>
@@ -50,10 +45,10 @@ You describe how you toiled, sweated, *bled* for your project, and then... you r
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" style="width: 150%; margin: 0 auto;" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" style="width: 150%; margin: 0 auto;" %}
     </div>
 </div>
 <div class="caption">

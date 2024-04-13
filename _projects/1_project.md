@@ -8,7 +8,7 @@ category: Software Engineering
 ---
 
 This project is elaborated based on an open-source benchmark and learning-environment
-for robotic manipulation: BulletArm <a href="https://github.com/ColinKohler/BulletArm">.  BulletArm builds upon PyBullet <a href="https://pybullet.org/wordpress/">, providing a diverse set of tools tailored to robotic manipulation simulations.
+for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">BulletArm</a>.  BulletArm builds upon <a href="https://pybullet.org/wordpress/">PyBullet</a>, providing a diverse set of tools tailored to robotic manipulation simulations.
 
 
 

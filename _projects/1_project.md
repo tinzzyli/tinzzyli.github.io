@@ -12,12 +12,12 @@ for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">Bul
 
 In BulletArm, a visual-based agent is used to interact with the environment. BulletArm uses a non-differentiable renderer to obtain heightmaps from the workspace as the observation of the environment.
 
-<div class="row justify-content-center">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a
-robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="width: 50%; margin: 0 auto;" %}
+<div class="row justify-content-center"> <!-- Center the row -->
+    <div class="col-sm mt-3 mt-md-0 text-center"> <!-- Center the column content -->
+        {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="max-width: 50%; height: auto;" %}
     </div>
 </div>
+
 
 <div class="caption">
     The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)

@@ -13,7 +13,7 @@ for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">Bul
 In BulletArm, a visual-based agent is used to interact with the environment. BulletArm uses a non-differentiable renderer to obtain heightmaps from the workspace as the observation of the environment.
 
 <div class="row justify-content-center"> <!-- Center the row -->
-    <div class="col-sm mt-12 mt-md-0 text-center"> <!-- Center the column content -->
+    <div class="col-sm mt-12 mt-md-0 text-center" style="width: 40%;"> <!-- Center the column content -->
         {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="width: 50%;"}
     </div>
 </div>
@@ -37,9 +37,7 @@ DQN takes heightmaps as input and outputs a q value map, it indicates the desire
     An example image of observation(Left), and an example image of q value map(Right).
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+Our motivation is to find out that is there exist a vulnerable layout of the workspace, which increase the failing rate of the agent. Unlike other applictions of adversarial attacks, we aim at  
 
 
 <div class="row justify-content-sm-center">

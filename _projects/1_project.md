@@ -35,8 +35,6 @@ DQN takes heightmaps as input and outputs a q value map, it indicates the desire
         {% include figure.html path="assets/img/obs_1.png" title="example image of observation" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
     </div>
     <div class="col-sm mt-4 mt-md-1 text-center"> 
-    </div>
-    <div class="col-sm mt-4 mt-md-1 text-center"> 
         {% include figure.html path="assets/img/q_map_1.png" title="example image of q value map" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
     </div>
 </div>

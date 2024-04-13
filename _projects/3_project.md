@@ -2,7 +2,7 @@
 layout: page
 title: LLM + OS
 description: Design prompts for a LLM-based agent framework intended to operate smartphone application
-img: assets/img/7.jpg
+img: assets/img/appagent_1.png
 # redirect: https://unsplash.com
 importance: 1
 category: Software Engineering

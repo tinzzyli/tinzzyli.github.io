@@ -2,7 +2,7 @@
 layout: page
 title: LLMs for Chemistry Tasks
 description: Craft prompts for LLMs, incorporating self-verification and Retrieval Augmented Generation
-img: assets/img/3.jpg
+img: assets/img/chemistry_1.jpg
 importance: 1
 category: AI for Science
 ---

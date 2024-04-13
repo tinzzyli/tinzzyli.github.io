@@ -2,7 +2,7 @@
 layout: page
 title: Robotic Arm Testing
 description: apply adversarial attacks on a robotic arm
-img: assets/img/12.jpg
+img: assets/img/bulletarm_1.png
 importance: 1
 category: Software Engineering
 ---

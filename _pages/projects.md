@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection cool projects.
 nav: True
 nav_order: 2
-display_categories: [AI Security, Software Engineering, AI for Sci]
+display_categories: [AI Security, Software Engineering, AI for Science]
 horizontal: false
 ---
 

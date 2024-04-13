@@ -46,3 +46,23 @@ DQN takes heightmaps as input and outputs a q value map, it indicates the desire
 </div>
 
 Our motivation is to find out the relationship between the initial workspace layout and the agent's successful rate. Unlike other applictions of adversarial attacks that add perturbations on the input image, we aim at searching for a vulnerable layout of the workspace, which increase the failing rate of the agent.
+
+To achieve it, a differentiable renderer should be introduced to replace the original one, thus we used <a href="https://github.com/BachiLi/redner/tree/master">redner</a>, a differentiable renderer that can take the derivatives of rendering outputs with respect to arbitrary scene parameters. This enhancement facilitates direct optimization of the model using backpropagation algorithms.
+
+<div class="row justify-content-center"> 
+    <div class="col-sm mt-4 mt-md-1 text-center"> 
+        {% include figure.html path="assets/img/bulletarm_2.png" title="example image" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
+    </div>
+    <div class="col-sm mt-4 mt-md-1 text-center"> 
+        {% include figure.html path="assets/img/bulletarm_3.png" title="example image" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
+    </div>
+    <div class="col-sm mt-4 mt-md-1 text-center"> 
+        {% include figure.html path="assets/img/bulletarm_4.png" title="example image" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
+    </div>
+</div>
+
+<div class="caption">
+    The same layout with three different actions suggested by DQN. It is observed that the agent fails, but it is not due to imprecision.
+</div>
+
+For the object grasping task investigation, experiments conducted within the Bulletarm robotic framework demonstrated that the effect of a given action on the environment is deterministic. Moreover, it was observed that the boundaries between success and failure within the action space are non-robust.

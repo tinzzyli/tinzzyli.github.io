@@ -7,10 +7,10 @@ importance: 1
 category: Software Engineering
 ---
 
-This project is elaborated based on an open-source benchmark and learning-environment
+This project is elaborated based on an open-sourced benchmark and learning-environment
 for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">BulletArm</a>.  BulletArm builds upon <a href="https://pybullet.org/wordpress/">PyBullet</a>, providing a diverse set of tools tailored to robotic manipulation simulations.
 
-
+In BulletArm, a visual-based agent is used to interact with the environment. BulletArm uses a non-differentiable renderer to obtain heightmaps from the workspace as the observation of the environment.
 
     ---
     layout: page
@@ -21,13 +21,14 @@ for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">Bul
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a
+robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/obs_1.png" title="example image of observation" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/q_map_1.png" title="example image of q value map" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

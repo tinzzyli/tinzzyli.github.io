@@ -12,6 +12,12 @@ for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">Bul
 
 In BulletArm, a visual-based agent is used to interact with the environment. BulletArm uses a non-differentiable renderer to obtain heightmaps from the workspace as the observation of the environment.
 
+<div class="row justify-content-center"> <!-- Center the row -->
+    <div class="col-sm mt-3 mt-md-0 text-center"> <!-- Center the column content -->
+        <img src="assets/img/bulletarm_1.png" alt="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="max-width: 80%; height: auto;">
+    </div>
+</div>
+
 DQN takes heightmaps as input and outputs a q value map, it indicates the desired action of the robotic arm(action = [x, y, rotation], x and y are the postion the arm should reach to, rotation is the degree of the end-effector) that the agent should execute. (e.g. The x,y position of the max element on the q value map represents the desired).
 
 Our motivation is to find out the relationship between the initial workspace layout and the agent's successful rate. Unlike other applictions of adversarial attacks that add perturbations on the input image, we aim at searching for a vulnerable layout of the workspace, which increase the failing rate of the agent.

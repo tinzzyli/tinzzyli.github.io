@@ -24,6 +24,13 @@ In BulletArm, a visual-based agent is used to interact with the environment. Bul
         {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a
 robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" %}
     </div>
+
+</div>
+<div class="caption">
+    The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)
+</div>
+
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/obs_1.png" title="example image of observation" class="img-fluid rounded z-depth-1" %}
     </div>
@@ -31,16 +38,9 @@ robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="im
         {% include figure.html path="assets/img/q_map_1.png" title="example image of q value map" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    An example image of observation(Left), and an example image of q value map(Right).
 </div>
 
 You can also put regular text between your rows of images.

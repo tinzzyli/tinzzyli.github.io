@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
+title: LLMs for Chemistry Tasks
+description: Craft prompts for LLMs, incorporating self-verification and Retrieval Augmented Generation
 img: assets/img/3.jpg
 importance: 2
-category: work
+category: AI for Science
 ---
 
 Every project has a beautiful feature showcase page.

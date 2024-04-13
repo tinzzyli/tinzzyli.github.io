@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A growing collection cool projects.
 nav: True
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [AI Security, Software Engineering, AI for Sci]
 horizontal: false
 ---
 

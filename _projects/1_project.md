@@ -14,7 +14,7 @@ In BulletArm, a visual-based agent is used to interact with the environment. Bul
 
 <div class="row justify-content-center"> <!-- Center the row -->
     <div class="col-sm mt-12 mt-md-0 text-center"> <!-- Center the column content -->
-        {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="max-width: 50%; height: auto;" %}
+        {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" style="width: 50%;"}
     </div>
 </div>
 
@@ -22,7 +22,7 @@ In BulletArm, a visual-based agent is used to interact with the environment. Bul
     The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)
 </div>
 
-DQN takes heightmaps as input and outputs a q value map, it indicates the desired action of the robotic arm(action = [x, y, rotation], x and y are the postion the arm should reach to, rotation is the degree of the end-effector) that the agent should execute. (e.g. The x,y position of the max element on the q value map represents the desired )
+DQN takes heightmaps as input and outputs a q value map, it indicates the desired action of the robotic arm(action = [x, y, rotation], x and y are the postion the arm should reach to, rotation is the degree of the end-effector) that the agent should execute. (e.g. The x, y position of the max element on the q value map represents the desired )
 
 <div class="row justify-content-center">
     <div class="col-sm mt-6 mt-md-0 text-center">

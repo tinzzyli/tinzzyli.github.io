@@ -13,7 +13,7 @@ profile:
     <p>TX 75080</p>
     
 
-news: true  # includes a list of news items
+news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
@@ -21,6 +21,6 @@ social: true  # includes social icons at the bottom of the page
 
 Hi,
 
-Tingxi is a incoming Ph.D. student at [Univeristy of Texas at Dallas](https://www.utdallas.edu/), he is very lucky to be advised by [Prof. Wei Yang](http://youngwei.com/). Before that, he was an undergrad student at [Dalian University of Technology](https://en.dlut.edu.cn/) and a visiting student at [Technical University of Munich](https://www.tum.de/en/).
+Tingxi is an incoming Ph.D. student at [Univeristy of Texas at Dallas](https://www.utdallas.edu/), he is very lucky to be advised by [Prof. Wei Yang](http://youngwei.com/). Before that, he was an undergrad student at [Dalian University of Technology](https://en.dlut.edu.cn/) and a visiting student at [Technical University of Munich](https://www.tum.de/en/).
 
 His primary research interest lies in AI security, software testing and AI for Sci.

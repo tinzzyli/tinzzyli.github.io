@@ -13,17 +13,18 @@ for robotic manipulation: <a href="https://github.com/ColinKohler/BulletArm">Bul
 In BulletArm, a visual-based agent is used to interact with the environment. BulletArm uses a non-differentiable renderer to obtain heightmaps from the workspace as the observation of the environment.
 
 <div class="row justify-content-center"> <!-- Center the row -->
-    <div class="col-sm mt-4 mt-md-0 text-center"> <!-- Center the column content -->
+    <div class="col-sm mt-4 mt-md-1 text-center"> <!-- Center the column content -->
     </div>
-    <div class="col-sm mt-4 mt-md-0 text-center" style="width: 80%;"> 
+    <div class="col-sm mt-4 mt-md-1 text-center" style="width: 80%;"> 
         {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-4 mt-md-0 text-center"> <!-- Center the column content -->
+    <div class="col-sm mt-4 mt-md-1 text-center"> <!-- Center the column content -->
+    </div>
 </div>
 
-<!-- <div class="caption">
+<div class="caption">
     The environment containing a robot arm, a camera, and a workspace(Credit to authors of BulletArm).
-</div> -->
+</div>
 
 DQN takes heightmaps as input and outputs a q value map, it indicates the desired action of the robotic arm(action = [x, y, rotation], x and y are the postion the arm should reach to, rotation is the degree of the end-effector) that the agent should execute. (e.g. The x,y position of the max element on the q value map represents the desired).
 
@@ -33,15 +34,15 @@ DQN takes heightmaps as input and outputs a q value map, it indicates the desire
     <div class="col-sm mt-4 mt-md-0 text-center" style="width: 80%;"> 
         {% include figure.html path="assets/img/obs_1.png" title="example image of observation" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
     </div>
-    <div class="col-sm mt-4 mt-md-0 text-center"> 
+    <div class="col-sm mt-4 mt-md-1 text-center"> 
     </div>
-    <div class="col-sm mt-4 mt-md-0 text-center"> 
+    <div class="col-sm mt-4 mt-md-1 text-center"> 
         {% include figure.html path="assets/img/q_map_1.png" title="example image of q value map" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
     </div>
 </div>
 
-Our motivation is to find out the relationship between the initial workspace layout and the agent's successful rate. Unlike other applictions of adversarial attacks that add perturbations on the input image, we aim at searching for a vulnerable layout of the workspace, which increase the failing rate of the agent.
-
 <div class="caption">
     An example image of observation(Left), and an example image of q value map(Right).
 </div>
+
+Our motivation is to find out the relationship between the initial workspace layout and the agent's successful rate. Unlike other applictions of adversarial attacks that add perturbations on the input image, we aim at searching for a vulnerable layout of the workspace, which increase the failing rate of the agent.

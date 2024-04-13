@@ -14,7 +14,6 @@ In BulletArm, a visual-based agent is used to interact with the environment. Bul
 
 <div class="row justify-content-center"> <!-- Center the row -->
     <div class="col-sm mt-4 mt-md-0 text-center"> <!-- Center the column content -->
-        <img src="assets/img/bulletarm_1.png" >
     </div>
     <div class="col-sm mt-4 mt-md-0 text-center" style="width: 80%;"> 
         {% include figure.html path="assets/img/bulletarm_1.png" title="The environment containing a robot arm, a camera, and a workspace (Credit to authors of BulletArm)" class="img-fluid rounded z-depth-1" %}

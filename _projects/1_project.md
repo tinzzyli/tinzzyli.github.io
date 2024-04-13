@@ -31,7 +31,7 @@ DQN takes heightmaps as input and outputs a q value map, it indicates the desire
 
 
 <div class="row justify-content-center"> 
-    <div class="col-sm mt-4 mt-md-0 text-center" style="width: 80%;"> 
+    <div class="col-sm mt-4 mt-md-0 text-center"> 
         {% include figure.html path="assets/img/obs_1.png" title="example image of observation" class="img-fluid rounded z-depth-1" style="max-width: 140%; height: auto;" %}
     </div>
     <div class="col-sm mt-4 mt-md-1 text-center"> 
@@ -62,7 +62,7 @@ To achieve it, a differentiable renderer should be introduced to replace the ori
 </div>
 
 <div class="caption">
-    The same layout with three different actions suggested by DQN. It is observed that the agent fails, but it is not due to imprecision.
+    The same layout with three different actions suggested by DQN. It is observed that the agent fails, but it is not due to imprecision(Blue dots denote a success attempt, red dots denote a failed attempt).
 </div>
 
 For the object grasping task investigation, experiments conducted within the Bulletarm robotic framework demonstrated that the effect of a given action on the environment is deterministic. Moreover, it was observed that the boundaries between success and failure within the action space are non-robust.

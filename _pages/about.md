@@ -23,4 +23,4 @@ Hi,
 
 Tingxi is an Ph.D. student at [Univeristy of Texas at Dallas](https://www.utdallas.edu/), he is very lucky to be advised by [Prof. Wei Yang](http://youngwei.com/). Before that, he was an undergrad at [Dalian University of Technology](https://en.dlut.edu.cn/) and a visiting student at [Technical University of Munich](https://www.tum.de/en/).
 
-**Research Interest**: artificial intelligence and software engineering.
+**Research Interest**: artificial intelligence; software engineering.

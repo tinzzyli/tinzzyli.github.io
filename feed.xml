@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en, zh, de"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://tinzzyli.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://tinzzyli.github.io/" rel="alternate" type="text/html" hreflang="en, zh, de"/><updated>2024-05-25T13:32:04+00:00</updated><id>https://tinzzyli.github.io/feed.xml</id><title type="html">blank</title><subtitle>Tingxi&apos;s academic homepage </subtitle><entry><title type="html">Introduction of Dynamic Programming</title><link href="https://tinzzyli.github.io/blog/2023/dynamic-programming/" rel="alternate" type="text/html" title="Introduction of Dynamic Programming"/><published>2023-05-13T08:00:00+00:00</published><updated>2023-05-13T08:00:00+00:00</updated><id>https://tinzzyli.github.io/blog/2023/dynamic-programming</id><content type="html" xml:base="https://tinzzyli.github.io/blog/2023/dynamic-programming/"><![CDATA[<p>[TOC]</p> <h1 id="dynamic-programming">Dynamic Programming</h1> <p>The main idea behind dynamic programming is to break down a complex problem into smaller overlapping subproblems, solve those subproblems, and build up the solution by combining the results of the subproblems. DP aims to avoid redundant calculations by storing the solutions to subproblems and reusing them as needed. This approach can significantly improve the efficiency of algorithms for problems that exhibit optimal substructure and overlapping subproblems.</p> <p>The two main techniques used in dynamic programming are:</p> <ol> <li> <p>Top-down approach (Memoization): This approach starts with the original problem and breaks it down into smaller subproblems. It uses memoization to store the solutions to subproblems and checks the memoization table before solving a subproblem to avoid redundant calculations. This approach often involves recursion to solve the subproblems.</p> </li> <li> <p>Bottom-up approach: This approach builds the solution iteratively, starting from the base case or the smallest subproblem and gradually solving larger subproblems until the original problem is solved. It avoids recursion and solves each subproblem only once, storing the solutions in a table or array. This approach is more iterative and follows a tabulation technique.</p> </li> </ol> <h2 id="climb-stairs">Climb Stairs</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">ClimbStairs</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+    <span class="c1">// assume that one, two or three steps each time can be taken</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">2</span><span class="o">){</span>
+        <span class="k">return</span> <span class="mi">3</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">3</span><span class="o">){</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nf">ClimbStairs</span><span class="o">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="nc">ClimbStairs</span><span class="o">(</span><span class="n">num</span><span class="o">-</span><span class="mi">2</span><span class="o">)</span> <span class="o">+</span> <span class="nc">ClimbStairs</span><span class="o">(</span><span class="n">num</span><span class="o">-</span><span class="mi">3</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="unique-path-1">Unique Path 1</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">UniquePath1</span><span class="o">(</span><span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+    <span class="c1">// solving problem 62 in leetcode.com</span>
+    <span class="c1">// robot at top left, exit at bottom right, move 1 grid each move in an m*n grid</span>
+    <span class="c1">// find how many unique path in total</span>
+    <span class="kt">int</span> <span class="o">[][]</span> <span class="n">grid</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">];</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="mi">1</span><span class="o">);</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">k</span><span class="o">++){</span>
+            <span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">grid</span><span class="o">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="unique-path-2">Unique Path 2</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">UniquePath2</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">grid</span><span class="o">){</span>
+    <span class="c1">// the grid may contain obstacle that marked as 1, space marked as 0</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">flag</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">flag</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">k</span><span class="o">++){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+                <span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">else</span><span class="o">{</span>
+                <span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">grid</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="n">grid</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">grid</span><span class="o">[</span><span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">grid</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="dungeon-game">Dungeon Game</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">DungeonGame</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">dungeon</span><span class="o">){</span>
+    <span class="c1">//the least amount of damage to save the princess</span>
+    <span class="c1">//HINT:</span>
+    <span class="c1">//problem can also be solved by considering the least amount of health point to save the princess, which requires for extra space</span>
+    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">dungeon</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="n">dungeon</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="no">MIN</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+
+    <span class="n">dungeon</span><span class="o">[</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">dungeon</span><span class="o">[</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">dungeon</span><span class="o">[</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--){</span><span class="c1">//iterators here are designed to be in-bound, but it needs to compare with its neighbor</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">==</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span><span class="o">==</span><span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+                <span class="k">continue</span><span class="o">;</span>
+            <span class="c1">//dungeon[i][j] is the total damage at place i,j</span>
+            <span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">row</span><span class="o">?</span><span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">]:</span><span class="no">MIN</span><span class="o">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">col</span><span class="o">?</span><span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">]:</span><span class="no">MIN</span><span class="o">)</span> <span class="o">+</span>  <span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
+            <span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">?</span> <span class="n">dungeon</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">:</span> <span class="mi">0</span> <span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">dungeon</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="rod-cutting">Rod Cutting</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">cutRod</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">prices</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span> <span class="c1">// dp[i] stores the maximum value for a rod of length i</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">maxVal</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">maxVal</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxVal</span><span class="o">,</span> <span class="n">prices</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+        <span class="o">}</span>
+
+        <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">maxVal</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="coin-combination">Coin Combination</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">CoinCombination</span><span class="o">(</span><span class="kt">int</span> <span class="n">target</span><span class="o">){</span>
+    <span class="c1">//unlike climbing stairs, 1 1 2 and 2 1 1 are considered to be the same solution</span>
+    <span class="c1">//assumes that there are three types of coins, 1euro, 2euro, 5euro</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">target</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+    <span class="n">dp</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="c1">//dp[NUM] -&gt; count of total solution to achieve NUM amount of money</span>
+    <span class="kt">int</span> <span class="o">[]</span> <span class="n">coins</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">coin</span> <span class="o">:</span> <span class="n">coins</span><span class="o">){</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">coin</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">target</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="n">coin</span><span class="o">];</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">target</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="max-subarray">Max SubArray</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">MaxSubArray</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">table</span><span class="o">){</span>
+<span class="c1">//      vanilla</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">table</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="n">table</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+=</span> <span class="n">table</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">table</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">res</span><span class="o">,</span> <span class="n">table</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">table</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+
+<span class="c1">//      improved</span>
+    <span class="kt">int</span> <span class="n">currentMax</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">allTimeMax</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">table</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="n">currentMax</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">table</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">currentMax</span><span class="o">+</span><span class="n">table</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="n">allTimeMax</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">allTimeMax</span><span class="o">,</span> <span class="n">currentMax</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">allTimeMax</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[[TOC]]]></summary></entry><entry><title type="html">Graph and UnDirected Graph</title><link href="https://tinzzyli.github.io/blog/2023/graph-programming/" rel="alternate" type="text/html" title="Graph and UnDirected Graph"/><published>2023-04-29T08:00:00+00:00</published><updated>2023-04-29T08:00:00+00:00</updated><id>https://tinzzyli.github.io/blog/2023/graph-programming</id><content type="html" xml:base="https://tinzzyli.github.io/blog/2023/graph-programming/"><![CDATA[<ul> <li><a href="#graph">Graph</a> <ul> <li><a href="#construction-adjacency-list-and-adjacency-matrix">Construction: Adjacency List and Adjacency Matrix</a></li> <li><a href="#bfs-breadth-first-search">BFS: Breadth First Search</a></li> <li><a href="#dfs-depth-first-search">DFS: Depth First Search</a></li> </ul> </li> <li><a href="#shortest-path-on-udg-undirected-graph">Shortest Path on UDG (UnDirected Graph)</a> <ul> <li><a href="#weighted-udg">Weighted UDG</a></li> <li><a href="#vanilla-dijkstra-algorithm">Vanilla Dijkstra Algorithm</a></li> <li><a href="#dijkstra-algorithm-with-priority-queue">Dijkstra Algorithm with Priority Queue</a></li> </ul> </li> </ul> <h1 id="graph">Graph</h1> <p>Generally, graphs can be catergorized as <em>undirected graph</em> and <em>directed graph</em>, in this chapter, we use unweighted undirected graph to illustrate most cases. :)</p> <h2 id="construction-adjacency-list-and-adjacency-matrix">Construction: Adjacency List and Adjacency Matrix</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">IndirectGraph</span><span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">numVertex</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;[]</span> <span class="n">adjList</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">adjMatrix</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">IndirectGraph</span><span class="o">(</span><span class="kt">int</span> <span class="n">numVertex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">numVertex</span> <span class="o">=</span> <span class="n">numVertex</span><span class="o">;</span>
+
+            <span class="n">adjMatrix</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">numVertex</span><span class="o">][</span><span class="n">numVertex</span><span class="o">];</span>
+
+            <span class="n">adjList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">[</span><span class="n">numVertex</span><span class="o">];</span>
+
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numVertex</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+                <span class="n">adjList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="o">(</span><span class="kt">char</span> <span class="n">c1</span><span class="o">,</span> <span class="kt">char</span> <span class="n">c2</span><span class="o">){</span>
+            <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">c2</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">;</span>
+            <span class="n">adjList</span><span class="o">[</span><span class="n">v1</span><span class="o">].</span><span class="na">add</span><span class="o">(</span><span class="n">v2</span><span class="o">);</span>
+            <span class="n">adjList</span><span class="o">[</span><span class="n">v2</span><span class="o">].</span><span class="na">add</span><span class="o">(</span><span class="n">v1</span><span class="o">);</span>
+            <span class="n">adjMatrix</span><span class="o">[</span><span class="n">v1</span><span class="o">][</span><span class="n">v2</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">adjMatrix</span><span class="o">[</span><span class="n">v2</span><span class="o">][</span><span class="n">v1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdjList</span><span class="o">(){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Indirect Graph Adjacency List: "</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numVertex</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"\n"</span><span class="o">+(</span><span class="kt">char</span><span class="o">)</span> <span class="o">(</span><span class="sc">'A'</span> <span class="o">+</span> <span class="n">i</span><span class="o">)+</span><span class="s">": "</span><span class="o">);</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">adjList</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">size</span><span class="o">();</span> <span class="n">j</span><span class="o">++){</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">((</span><span class="kt">char</span><span class="o">)</span> <span class="o">(</span><span class="sc">'A'</span><span class="o">+</span><span class="n">adjList</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">get</span><span class="o">(</span><span class="n">j</span><span class="o">))+</span><span class="s">" "</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printAdjMatrix</span><span class="o">(){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nIndirect Graph Adjacency Matrix: "</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numVertex</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"\n"</span><span class="o">+(</span><span class="kt">char</span><span class="o">)</span> <span class="o">(</span><span class="sc">'A'</span> <span class="o">+</span> <span class="n">i</span><span class="o">)</span> <span class="o">+</span> <span class="s">": "</span><span class="o">);</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">numVertex</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">adjMatrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]?</span> <span class="s">"1  "</span> <span class="o">:</span> <span class="s">"0  "</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <p>This is the graph we use:</p> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/graph-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/graph-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/graph-1400.webp"/> <img src="/assets/img/graph.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <blockquote> <p>power by draw.io :)</p> </blockquote> <p>construction code:</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="nc">IndirectGraph</span> <span class="n">indirectGraph</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IndirectGraph</span><span class="o">(</span><span class="mi">7</span><span class="o">);</span>
+    <span class="o">[</span><span class="no">E</span><span class="o">]--------[</span><span class="no">B</span><span class="o">]--------[</span><span class="no">F</span><span class="o">]--------[</span><span class="no">C</span><span class="o">]</span>
+    <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>
+    <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>
+    <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>
+    <span class="o">[</span><span class="no">G</span><span class="o">]--------[</span><span class="no">A</span><span class="o">]--------[</span><span class="no">D</span><span class="o">]</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'A'</span><span class="o">,</span> <span class="sc">'B'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'A'</span><span class="o">,</span> <span class="sc">'D'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'A'</span><span class="o">,</span> <span class="sc">'G'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'B'</span><span class="o">,</span> <span class="sc">'E'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'B'</span><span class="o">,</span> <span class="sc">'F'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'C'</span><span class="o">,</span> <span class="sc">'F'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'D'</span><span class="o">,</span> <span class="sc">'F'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">addEdge</span><span class="o">(</span><span class="sc">'E'</span><span class="o">,</span> <span class="sc">'G'</span><span class="o">);</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">printAdjList</span><span class="o">();</span>
+    <span class="n">indirectGraph</span><span class="o">.</span><span class="na">printAdjMatrix</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="bfs-breadth-first-search">BFS: Breadth First Search</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">BFS</span><span class="o">(</span><span class="nc">IndirectGraph</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">char</span> <span class="n">start</span><span class="o">){</span>
+    <span class="c1">//initialized to be false</span>
+    <span class="kt">boolean</span> <span class="o">[]</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">numVertex</span><span class="o">];</span>
+    <span class="c1">//FIFO</span>
+    <span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+    <span class="c1">//add the next vertex(-ices) to visit in queue, in this case, 'A'</span>
+    <span class="n">visited</span><span class="o">[</span><span class="n">start</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span><span class="n">start</span><span class="o">);</span>
+
+    <span class="k">while</span> <span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
+        <span class="c1">//(iteratively) read element(s) from the queue</span>
+        <span class="kt">int</span> <span class="n">vert</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span><span class="n">vert</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+
+        <span class="c1">//use adjacency list</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">graph</span><span class="o">.</span><span class="na">adjList</span><span class="o">[</span><span class="n">vert</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">].</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="c1">//[vert - 'A'] is the label of each adjList</span>
+            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="na">adjList</span><span class="o">[</span><span class="n">vert</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">].</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="c1">//if it is not visited, add to queue</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">visited</span><span class="o">[</span><span class="n">num</span><span class="o">]){</span>
+                <span class="n">visited</span><span class="o">[</span><span class="n">num</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">+</span><span class="sc">'A'</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <p>🤔 This block of code could be beutify. In <em>adjList&lt;&gt;</em> and <em>queue&lt;&gt;</em>, values of the some vertex is different.</p> <h2 id="dfs-depth-first-search">DFS: Depth First Search</h2> <p>Implementation with Recursion</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">RecursiveUtilDFS</span><span class="o">(</span><span class="nc">IndirectGraph</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">char</span> <span class="n">start</span><span class="o">,</span> <span class="kt">boolean</span><span class="o">[]</span> <span class="n">visited</span><span class="o">){</span>
+    <span class="n">visited</span><span class="o">[</span><span class="n">start</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">start</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+
+    <span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span>  <span class="n">i</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="na">adjList</span><span class="o">[</span><span class="n">start</span> <span class="o">-</span> <span class="sc">'A'</span><span class="o">].</span><span class="na">listIterator</span><span class="o">();</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">i</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">visited</span><span class="o">[</span><span class="n">n</span><span class="o">])</span> <span class="o">{</span>
+            <span class="nc">RecursiveUtilDFS</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="sc">'A'</span><span class="o">),</span> <span class="n">visited</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">RecursiveDFS</span><span class="o">(</span><span class="nc">IndirectGraph</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">char</span> <span class="n">start</span><span class="o">){</span>
+    <span class="kt">boolean</span> <span class="o">[]</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">numVertex</span><span class="o">];</span>
+    <span class="nc">RecursiveUtilDFS</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">visited</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div> <p>Implementation with Iteration</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">DFS</span><span class="o">(</span><span class="nc">IndirectGraph</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">char</span> <span class="n">start</span><span class="o">){</span>
+    <span class="kt">boolean</span> <span class="o">[]</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">numVertex</span><span class="o">];</span>
+
+    <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;&gt;();</span>
+    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span><span class="n">start</span><span class="o">);</span>
+
+    <span class="k">while</span><span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
+        <span class="kt">int</span> <span class="n">vert</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+
+        <span class="k">if</span><span class="o">(!</span><span class="n">visited</span><span class="o">[</span><span class="n">vert</span><span class="o">-</span><span class="sc">'A'</span><span class="o">]){</span>
+            <span class="n">visited</span><span class="o">[</span><span class="n">vert</span><span class="o">-</span><span class="sc">'A'</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">((</span><span class="kt">char</span><span class="o">)</span> <span class="n">vert</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">graph</span><span class="o">.</span><span class="na">adjList</span><span class="o">[</span><span class="n">vert</span><span class="o">-</span><span class="sc">'A'</span><span class="o">].</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+                <span class="kt">int</span> <span class="n">neighbor</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="na">adjList</span><span class="o">[</span><span class="n">vert</span><span class="o">-</span><span class="sc">'A'</span><span class="o">].</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(!</span><span class="n">visited</span><span class="o">[</span><span class="n">neighbor</span><span class="o">]){</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">neighbor</span><span class="o">+</span><span class="sc">'A'</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h1 id="shortest-path-on-udg-undirected-graph">Shortest Path on UDG (UnDirected Graph)</h1> <p>The shortest path algorithm is a fundamental concept in graph theory that finds the most efficient route between two nodes in a graph. It has numerous applications, including navigation systems, network routing protocols, and resource allocation problems. The importance of this algorithm lies in its ability to solve optimization problems that involve finding the path with minimum cost or distance. By minimizing the number of steps or distance traveled, the algorithm can save time and resources. The shortest path algorithm is widely used in computer science, operations research, and transportation engineering.</p> <p>To illustrate our algorithms, we need a weighted UDG:</p> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/shortestpath-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/shortestpath-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/shortestpath-1400.webp"/> <img src="/assets/img/shortestpath.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> <blockquote> <p>powerer by draw.io :)</p> </blockquote> <h2 id="weighted-udg">Weighted UDG</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+
+            <span class="no">A</span>    <span class="no">B</span>    <span class="no">C</span>    <span class="no">D</span>    <span class="no">E</span>    <span class="no">F</span>    <span class="no">G</span>
+    <span class="no">A</span>   <span class="o">{</span>   <span class="mi">0</span><span class="o">,</span>  <span class="mi">12</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span>  <span class="mi">16</span><span class="o">,</span>  <span class="mi">14</span><span class="o">}</span>
+    <span class="no">B</span>   <span class="o">{</span>  <span class="mi">12</span><span class="o">,</span>   <span class="mi">0</span><span class="o">,</span>  <span class="mi">10</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span>   <span class="mi">7</span><span class="o">,</span> <span class="no">INF</span><span class="o">}</span>
+    <span class="no">C</span>   <span class="o">{</span> <span class="no">INF</span><span class="o">,</span>  <span class="mi">10</span><span class="o">,</span>   <span class="mi">0</span><span class="o">,</span>   <span class="mi">3</span><span class="o">,</span>   <span class="mi">5</span><span class="o">,</span>   <span class="mi">6</span><span class="o">,</span> <span class="no">INF</span><span class="o">}</span>
+    <span class="no">D</span>   <span class="o">{</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span>   <span class="mi">3</span><span class="o">,</span>   <span class="mi">0</span><span class="o">,</span>   <span class="mi">4</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">}</span>
+    <span class="no">E</span>   <span class="o">{</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span>   <span class="mi">5</span><span class="o">,</span>   <span class="mi">4</span><span class="o">,</span>   <span class="mi">0</span><span class="o">,</span>   <span class="mi">2</span><span class="o">,</span>   <span class="mi">8</span><span class="o">}</span>
+    <span class="no">F</span>   <span class="o">{</span>  <span class="mi">16</span><span class="o">,</span>   <span class="mi">7</span><span class="o">,</span>   <span class="mi">6</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span>   <span class="mi">2</span><span class="o">,</span>   <span class="mi">0</span><span class="o">,</span>   <span class="mi">9</span><span class="o">}</span>
+    <span class="no">G</span>   <span class="o">{</span>  <span class="mi">14</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span> <span class="no">INF</span><span class="o">,</span>   <span class="mi">8</span><span class="o">,</span>   <span class="mi">9</span><span class="o">,</span>   <span class="mi">0</span><span class="o">}</span>
+
+    <span class="nc">WeightedUDG</span> <span class="n">wUDG</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WeightedUDG</span><span class="o">(</span><span class="mi">7</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">12</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">10</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">16</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">7</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">4</span> <span class="o">,</span><span class="mi">5</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">14</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">8</span><span class="o">);</span>
+    <span class="n">wUDG</span><span class="o">.</span><span class="na">addWeight</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">9</span><span class="o">);</span>
+
+    <span class="kt">int</span> <span class="o">[][]</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">wUDG</span><span class="o">.</span><span class="na">getWeightedUDG</span><span class="o">();</span>
+
+    <span class="kt">int</span> <span class="o">[]</span> <span class="n">dist</span> <span class="o">=</span> <span class="nc">DijkstraAlg</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">dist</span><span class="o">));</span>
+<span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">WeightedUDG</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">numVert</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="o">[][]</span> <span class="n">weightedUDG</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">WeightedUDG</span><span class="o">(</span><span class="kt">int</span> <span class="n">numVert</span><span class="o">){</span>
+        <span class="n">numVert</span> <span class="o">=</span> <span class="n">numVert</span><span class="o">;</span>
+        <span class="n">weightedUDG</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">numVert</span><span class="o">][</span><span class="n">numVert</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numVert</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">weightedUDG</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">numVert</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">weightedUDG</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addWeight</span><span class="o">(</span><span class="kt">int</span> <span class="n">vert1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">vert2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="o">){</span>
+        <span class="c1">//index starts from 0</span>
+        <span class="c1">//by default, the path to itself is zero</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">vert1</span> <span class="o">!=</span> <span class="n">vert2</span><span class="o">){</span>
+            <span class="n">weightedUDG</span><span class="o">[</span><span class="n">vert1</span><span class="o">][</span><span class="n">vert2</span><span class="o">]</span> <span class="o">=</span> <span class="n">weight</span><span class="o">;</span>
+            <span class="n">weightedUDG</span><span class="o">[</span><span class="n">vert2</span><span class="o">][</span><span class="n">vert1</span><span class="o">]</span> <span class="o">=</span> <span class="n">weight</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">getWeightedUDG</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="n">weightedUDG</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="vanilla-dijkstra-algorithm">Vanilla Dijkstra Algorithm</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="o">[]</span> <span class="nc">Dijkstra</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span><span class="n">graph</span><span class="o">,</span> <span class="kt">char</span> <span class="n">_start</span><span class="o">){</span>
+    <span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">_start</span><span class="o">-</span><span class="sc">'A'</span><span class="o">;</span>
+    <span class="kt">boolean</span> <span class="o">[]</span> <span class="n">visited</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="o">[]</span> <span class="n">distance</span><span class="o">;</span>
+
+    <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">distance</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">);</span>
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">visited</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+
+    <span class="n">distance</span><span class="o">[</span><span class="n">start</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">graph</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+        <span class="kt">int</span> <span class="n">minDist</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">minNode</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">visited</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">distance</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">minDist</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">minDist</span> <span class="o">=</span> <span class="n">distance</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+                <span class="n">minNode</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">minNode</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">break</span><span class="o">;</span> 
+        <span class="o">}</span>
+
+        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">minNode</span><span class="o">;</span>
+        <span class="n">visited</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">v</span><span class="o">++){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">graph</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">v</span><span class="o">]</span> <span class="o">&lt;</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">visited</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">distance</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">distance</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">+</span> <span class="n">graph</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">v</span><span class="o">]</span> <span class="o">){</span>
+                <span class="n">distance</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">=</span> <span class="n">distance</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">+</span> <span class="n">graph</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">v</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">distance</span><span class="o">;</span>
+
+<span class="o">}</span>
+
+</code></pre></div></div> <h2 id="dijkstra-algorithm-with-priority-queue">Dijkstra Algorithm with Priority Queue</h2> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="o">[]</span> <span class="nc">DijkstraAlg</span><span class="o">(</span><span class="kt">int</span> <span class="o">[][]</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">){</span>
+
+    <span class="kt">boolean</span> <span class="o">[]</span> <span class="n">visited</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="o">[]</span> <span class="n">distance</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="o">[]</span> <span class="n">prevVert</span><span class="o">;</span>
+
+    <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">pq</span><span class="o">;</span>
+
+    <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+    <span class="n">prevVert</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">distance</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">);</span>
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">visited</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">prevVert</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+
+    <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;(</span><span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="nc">Comparator</span><span class="o">.</span><span class="na">comparingInt</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">distance</span><span class="o">[</span><span class="n">a</span><span class="o">]));</span>
+    <span class="n">pq</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">start</span><span class="o">);</span>
+    <span class="n">distance</span><span class="o">[</span><span class="n">start</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+
+    <span class="k">while</span> <span class="o">(!</span><span class="n">pq</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
+        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">pq</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+        <span class="n">visited</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">v</span><span class="o">++){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">graph</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">v</span><span class="o">]</span> <span class="o">&lt;</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">visited</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">distance</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">distance</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">+</span> <span class="n">graph</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">v</span><span class="o">]</span> <span class="o">){</span>
+                <span class="n">distance</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">=</span> <span class="n">distance</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">+</span> <span class="n">graph</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">v</span><span class="o">];</span>
+                <span class="n">pq</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">v</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">distance</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>]]></content><author><name></name></author><summary type="html"><![CDATA[Graph Construction: Adjacency List and Adjacency Matrix BFS: Breadth First Search DFS: Depth First Search Shortest Path on UDG (UnDirected Graph) Weighted UDG Vanilla Dijkstra Algorithm Dijkstra Algorithm with Priority Queue]]></summary></entry></feed>
